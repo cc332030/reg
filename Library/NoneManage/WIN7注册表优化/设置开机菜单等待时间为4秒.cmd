@@ -1,0 +1,1 @@
+bcdedit /timeout 4

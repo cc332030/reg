@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+#防止将窗口移动到屏幕边缘时自动排列窗口(自动最大化)
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"WindowArrangementActive"="0"

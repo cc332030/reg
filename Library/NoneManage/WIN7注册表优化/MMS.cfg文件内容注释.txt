@@ -1,0 +1,7 @@
+FLASH MMS.cfg文件内容注释
+1为禁用 0为不禁用
+AVHardwareDisable=1（禁用麦克风）
+RTMFPP2PDisable=1（禁用上传）
+SilentAutoUpdateEnable=0（禁用更新）
+AutoUpdateDisable=1（禁用更新）
+ProtectedMode=0（禁用本身保护）

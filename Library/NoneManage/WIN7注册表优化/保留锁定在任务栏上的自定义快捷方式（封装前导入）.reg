@@ -1,0 +1,6 @@
+Windows Registry Editor Version 5.00
+
+#保留锁定在任务栏上的自定义快捷方式（封装前导入）
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\Sysprep\Cleanup]
+"{4af3c40d-28cf-d231-3200-c2f12d89732a}"=-
+"{03513543-c453-2e4f-3200-c2f12d89732a}"=-

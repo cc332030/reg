@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+;´ò¿ªIEÊÕ²Ø¼Ð
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\LinksBar] 
+"Enabled"=dword:00000000

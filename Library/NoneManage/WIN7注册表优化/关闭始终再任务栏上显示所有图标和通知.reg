@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+#打开始终再任务栏上显示所有图标和通知
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"EnableAutoTray"=dword:00000001

@@ -1,0 +1,13 @@
+[Version]
+signature="$Windows NT$"
+DriverVer=10/01/2002,5.2.3790.1830
+
+[DefaultInstall]
+DelReg = DeskIEIcon.DelReg
+
+[DeskIEIcon.DelReg]
+HKCR,"%IECLSID%"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{871C5380-42A0-1069-A2EA-08002B30308D}"
+
+[Strings]
+IECLSID = "CLSID\{871C5380-42A0-1069-A2EA-08002B30308D}"

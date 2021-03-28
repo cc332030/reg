@@ -1,0 +1,4 @@
+Windows Registry Editor Version 5.00
+
+;右键记事本打开
+[-HKEY_CLASSES_ROOT\*\shell\Notepad]

@@ -1,0 +1,35 @@
+Windows Registry Editor Version 5.00
+
+#禁用用户账号控制（UAC）
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+#通知UAC强度级别 0=不提示
+"ConsentPromptBehaviorAdmin"=dword:00000000
+"ConsentPromptBehaviorUser"=dword:00000000
+;关闭用户账户控制UAC
+"EnableLUA"=dword:00000000
+;关闭桌面提示安全桌面
+"PromptOnSecureDesktop"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Action Center\Checks\{C8E6F269-B90A-4053-A3BE-499AFCEC98C4}.check.0]
+"CheckSetting"=hex:23,00,41,00,43,00,42,00,6c,00,6f,00,62,00,00,00,00,00,00,00,\00,00,00,00,01,00,00,00,10,00,00,00,00,00,00,00
+
+
+#关闭UAC通知
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Security Center]
+"UacDisableNotify"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender]
+"DisableAntiSpyware"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender]
+"DisableAntiSpyware"=dword:00000001
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"HideSCAHealth"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
+"Windows Defender"=-
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore]
+"RPSessionInterval"=dword:00000000
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SPP\Clients]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SPP\Clients]
+
+
+#不启动 Luafv.sys
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\luafv]
+"Start"=dword:00000004

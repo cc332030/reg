@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"ElevateNonAdmins"=dword:00000000
+"AcceptTrustedPublisherCerts"=dword:00000001
+"WUStatusServer"="Falclion"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"NoAutoRebootWithLoggedOnUsers"=dword:00000001
+"RebootRelaunchTimeoutEnabled"=dword:00000001
+"RebootRelaunchTimeout"=dword:0000000a
+"NoAutoUpdate"=dword:00000001
+"IncludeRecommendedUpdates"=dword:00000000
+"EnableFeaturedSoftware"=dword:00000000
+"UseWUServer"=dword:00000001

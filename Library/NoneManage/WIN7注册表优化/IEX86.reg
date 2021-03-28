@@ -1,0 +1,682 @@
+Windows Registry Editor Version 5.00
+
+IE优化
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+#关闭cookie提示，典型效果就是第一次访问英雄宽频电影网时弹出的cookie提示。
+"PrivDiscUiShown"=dword:00000001
+#关闭弹出窗口提示，典型效果就是第一次访问163或其他带有弹出网页时的提示。
+"FirstTime"=dword:00000000
+#关闭跳转https连接的安全警告，典型效果就是登陆126邮箱时的安全提示。
+"WarnOnZoneCrossing"=dword:00000000
+#解决英雄联盟首次登陆提示服务器繁忙问题-使用SSL3.0和TLS1.0=a0;a8全部启用
+"SecureProtocols"=dword:000000a0
+#解决英雄联盟首次登陆提示服务器繁忙问题-不检查服务器证书吊销
+"CertificateRevocation"=dword:00000000
+#该站点安全证书的吊销信息不可用.是否继续
+"WarnonBadCertRecving"=dword:00000000
+#取消IE的安全警报弹出提示
+"WarnOnHTTPSToHTTPRedirect"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+#关闭cookie提示，典型效果就是第一次访问英雄宽频电影网时弹出的cookie提示。
+"PrivDiscUiShown"=dword:00000001
+#关闭弹出窗口提示，典型效果就是第一次访问163或其他带有弹出网页时的提示。
+"FirstTime"=dword:00000000
+#关闭跳转https连接的安全警告，典型效果就是登陆126邮箱时的安全提示。
+"WarnOnZoneCrossing"=dword:00000000
+#解决英雄联盟首次登陆提示服务器繁忙问题-使用SSL3.0和TLS1.0=a0;a8全部启用
+"SecureProtocols"=dword:000000a0
+#解决英雄联盟首次登陆提示服务器繁忙问题-不检查服务器证书吊销
+"CertificateRevocation"=dword:00000000
+#该站点安全证书的吊销信息不可用.是否继续
+"WarnonBadCertRecving"=dword:00000000
+#取消IE的安全警报弹出提示
+"WarnOnHTTPSToHTTPRedirect"=dword:00000000
+
+#解决英雄联盟首次登陆提示服务器繁忙问题-不检查发行商的证书是否吊销,00023e00=否
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\WinTrust\Trust Providers\Software Publishing]
+"State"=dword:00023e00
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WinTrust\Trust Providers\Software Publishing]
+"State"=dword:00023e00
+
+#关闭访问中国移动网站的安全提示
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\MINIE]
+"WarnOnZoneCrossing"=dword:00000000
+
+#启用IE浏览器对HTTP协议的支持
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"EnableHttp1_1"=dword:00000001
+
+#Internet Settings\Zones\0 本地计算机配置
+#Internet Settings\Zones\3 Internet配置
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3]
+#IE 安全级别设置(00012000=高 00011500=中-高 00011000=中 00010500=中低 00010000=低)
+#当前使用的安全级别设置:
+"CurrentLevel"=dword:00011000
+#最低设置:
+"MinLevel"=dword:000CheckExeSignatures10000
+#推荐设置:
+"RecommendedLevel"=dword:00011000
+(3＝禁用、0＝启用、1=提示)
+#1609 显示混合内容，关闭访问移动网站的安全提示信息
+"1609"=dword:00000000
+#1607 为跨域浏览子框架,为3则会导致无法访问pubwin后台.
+"1607"=dword:00000000
+#1601 为关闭访问126邮箱的安全提示
+"1601"=dword:00000000
+#1804 为加载iframe框内程序不提示
+"1804"=dword:00000001
+#1806 加载应用程序和不安全文件
+"1806"=dword:00000000
+#1809 禁止使用弹出窗口阻止程序
+"1809"=dword:00000003
+#2300 为允许网页中显示受限协议
+"2300"=dword:00000000
+#2301 SmartScreen过滤器(IE8以上,IE7为‘仿冒网站筛选’)
+"2301"=dword:00000003
+#活动脚本
+#(3＝禁用、0＝启用、1＝提示)
+"1400"=dword:00000000
+#1407 为允许对剪切板进行编程访问
+"1407"=dword:00000000
+#internet允许以前未使用的AcitveX的控件而不提示
+"120B"=dword:00000003
+"1208"=dword:00000000
+#允许加载未签名的AcitveX
+"1201"=dword:00000001
+"1001"=dword:00000001
+"1004"=dword:00000001
+"1209"=dword:00000001
+#修复 IE8 与 支付宝、Discuz 论坛的兼容性问题
+"160A"=dword:00000000
+"1C00"=hex:00,00,01,00
+#1E05 软件频道权限 （30000＝安全度 - 低、10000＝安全度 - 高、20000＝安全度－中）
+"1E05"=dword:00030000
+#未知
+"1408"=dword:00000000
+"1207"=dword:00000000
+"2005"=dword:00000000
+"2103"=dword:00000000
+"2104"=dword:00000000
+"2105"=dword:00000000
+"2500"=dword:00000003
+"180D"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3]
+#IE 安全级别设置(00012000=高 00011500=中-高 00011000=中 00010500=中低 00010000=低)
+#当前使用的安全级别设置:
+"CurrentLevel"=dword:00011000
+#最低设置:
+"MinLevel"=dword:000CheckExeSignatures10000
+#推荐设置:
+"RecommendedLevel"=dword:00011000
+(3＝禁用、0＝启用、1=提示)
+#1609 显示混合内容，关闭访问移动网站的安全提示信息
+"1609"=dword:00000000
+#1607 为跨域浏览子框架,为3则会导致无法访问pubwin后台.
+"1607"=dword:00000000
+#1601 为关闭访问126邮箱的安全提示
+"1601"=dword:00000000
+#1804 为加载iframe框内程序不提示
+"1804"=dword:00000001
+#1806 加载应用程序和不安全文件
+"1806"=dword:00000000
+#1809 禁止使用弹出窗口阻止程序
+"1809"=dword:00000003
+#2300 为允许网页中显示受限协议
+"2300"=dword:00000000
+#2301 SmartScreen过滤器(IE8以上,IE7为‘仿冒网站筛选’)
+"2301"=dword:00000003
+#活动脚本
+#(3＝禁用、0＝启用、1＝提示)
+"1400"=dword:00000000
+#1407 为允许对剪切板进行编程访问
+"1407"=dword:00000000
+#internet允许以前未使用的AcitveX的控件而不提示
+"120B"=dword:00000003
+"1208"=dword:00000000
+#允许加载未签名的AcitveX
+"1201"=dword:00000001
+"1001"=dword:00000001
+"1004"=dword:00000001
+"1209"=dword:00000001
+#修复 IE8 与 支付宝、Discuz 论坛的兼容性问题
+"160A"=dword:00000000
+"1C00"=hex:00,00,01,00
+#1E05 软件频道权限 （30000＝安全度 - 低、10000＝安全度 - 高、20000＝安全度－中）
+"1E05"=dword:00030000
+#未知
+"1408"=dword:00000000
+"1207"=dword:00000000
+"2005"=dword:00000000
+"2103"=dword:00000000
+"2104"=dword:00000000
+"2105"=dword:00000000
+"2500"=dword:00000003
+"180D"=dword:00000000
+
+#本地intranet允许以前未使用的AcitveX的控件而不提示，不提示120B=3，1208=0，提示120B=0，1208=3
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\1]
+"120B"=dword:00000003
+"1208"=dword:00000000
+
+#IE8访问FTP时，自动以文件夹视图展现
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_INTERNET_SHELL_FOLDERS]
+"iexplore.exe"=dword:00000001
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\restrictions]
+"NoBrowserOptions"=dword:00000000
+
+#删除修改IE并发连接数为10个
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"MaxConnectionsPerServer"=-
+"MaxConnectionsPer1_0Server"=-
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_MAXCONNECTIONSPER1_0SERVER]
+
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_MAXCONNECTIONSPERSERVER]
+
+
+#在兼容性视图中显示所有网站，避免网站走形。尾数1为开启 0为关闭
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\BrowserEmulation]
+"AllSitesCompatibilityMode"=-
+
+#是否关闭IE弹窗拦截，yes为阻止，00000000为不阻止。
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\New Windows]
+#阻止弹出窗口
+"PopupMgr"=dword:00000000
+#阻止弹出窗口时播放声音
+"PlaySound"=dword:00000000 
+#阻止弹出窗口时显示信息栏
+"UseSecBand"=dword:00000000 
+
+#避免打开桌面的IE快捷方式时将当前窗口覆盖掉，尾数为0不覆盖，为1覆盖，该设置在关闭选项卡浏览方式时生效。
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"AllowWindowReuse"=dword:00000000
+
+#设置IE进程数量，位数为0则每个ie窗口有一个ie进程，设置为0会导致win7的ie保护失效【推荐】；
+#为2则无论开多少个ie窗口都只有2个进程，设置为2会导致保存图片时，无法记录上一次图片的保存位置(WIN764位请把该项删掉，不然会造成QQ快速启动插件和迅雷下载检测等功能无法使用)
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"TabProcGrowth"=-
+
+#弹窗设置，0由IE自己决定，1为弹出一个独立的IE窗口，2为在新选项卡中打开窗口。
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\TabbedBrowsing]
+"PopupsUseNewWindow"=dword:00000001
+
+#自定义 IE 默认下载目录 -> 右键：目标另存为(A)...
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer]
+"Download Directory"="D:\\迅雷下载"
+
+#将停止和刷新按钮放在左侧。尾数为1在左侧，为0在右侧
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\CommandBar]
+"ShowLeftAddressToolbar"=dword:00000001
+
+#关闭IE8“启用内存保护帮助减少联机攻击” 以解决支付宝问题
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main]
+"DEPOff"=dword:00000001
+
+#解决打开网页快捷方式出现"http://-nomerge +快捷网址"
+[HKEY_CLASSES_ROOT\HTTP\shell\open\command]
+@="\"C:\\Program Files\\Internet Explorer\\IEXPLORE.EXE\" -nohome %1"
+
+#禁止自动检测局域网设置
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections]
+"SavedLegacySettings"=hex:46,00,00,00,26,00,00,00,01,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00
+"DefaultConnectionSettings"=hex:46,00,00,00,20,00,00,00,01,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+
+#IE崩溃自动恢复功能，2为禁止，0为开启
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Recovery]
+"AutoRecover"=dword:00000000
+
+#每个IE窗口使用单独进程
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\BrowseNewProcess]
+"BrowseNewProcess"="yes"
+
+#开启IE自动缩图功能
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Enable AutoImageResize"="yes"
+
+#启用自动完成，yes启用，no不启用。
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Use FormSuggest"="yes"
+
+#关闭菜单栏，0为不显示，1为显示
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"AlwaysShowMenus"=dword:00000000
+
+#IE8菜单栏和地址栏上下顺序对调，0为地址栏上菜单栏下，1为地址栏下菜单栏上
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Toolbar\WebBrowser]
+"ITBar7Position"=dword:00000001
+
+#禁止显示右上角的搜索框，1为不显示，0为显示
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Infodelivery\Restrictions]
+"NoSearchBox"=dword:00000001
+
+#禁止显示收藏夹栏，0为不显示，1为显示
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\LinksBar]
+"Enabled"=dword:00000000
+
+#显示命令栏，0为不显示，1为显示
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\CommandBar]
+"CommandBarEnabled"=dword:00000001
+
+#启用选项卡分组，尾数1显示小星星和收藏夹文字描述，2只显示小星星。
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\CommandBar]
+"TextOption"=dword:00000001
+
+#IE10隐藏收藏夹
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\MINIE]
+"LinksBandEnabled"=dword:00000000
+
+#隐藏IE8收藏夹小星星，0为显示，1为不显示
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Toolbars\Restrictions]
+"NoCommandBar"=dword:00000000
+
+#锁定IE工具栏
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Toolbar]
+"Locked"=dword:00000001
+
+#显示状态栏，0为不显示，1为显示
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\MINIE]
+"ShowStatusBar"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Download]
+检查下载程序的签名 yes=开 no=关
+"CheckExeSignatures"="no"
+允许运行或安装软件，即使签名失效 0为关 1为开
+"RunInvalidSignatures"=dword:00000001
+
+#禁止IE自动安装组件                      
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Infodelivery\Restrictions] 
+"NoJITSetup"=dword:00000001
+
+#禁止IE检查默认浏览器设置，位数为no不检查，为yes每次启动检查，如果设置为yes则又会导致QQ农场覆盖问题。
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Check_Associations"="no"
+
+#启用快速导航选项卡，尾数0为不启用，1为启用。
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\TabbedBrowsing]
+"QuickTabsThreshold"=dword:00000000
+
+#启用选项卡浏览，尾数0为不启用，1为启用。
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\TabbedBrowsing]
+"Enabled"=dword:00000000
+
+#关闭多个选项卡时给出警告，尾数0为不给警告，1为给出警告(建议不给警告)。
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\TabbedBrowsing]
+"WarnOnClose"=dword:00000000
+
+#关闭IE8第一次启动时的设置向导
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Main]
+"DisableFirstRunCustomize"=dword:00000002
+
+#跳过 IE7/IE8 首次运行自定义设置
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"RunOnceHasShown"=dword:00000001
+"RunOnceComplete"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main]
+"DisableFirstRunCustomize"=dword:00000001
+
+#搜索
+[-HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes]
+
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\SearchScopes]
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes]
+"DefaultScope"="{44177982-996D-4b79-B29F-5B60E13A5169}"
+"ShowSearchSuggestionsGlobal"=dword:00000001
+"DisplayQuickPick"=dword:00000001
+"DownloadRetries"=dword:00000000
+"Version"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{2F583017-2409-446F-A3F2-0D681A8CEB08}]
+"DisplayName"="Bing"
+"URL"="http://www.bing.com/search?q={searchTerms}&src=IE-SearchBox&FORM=IE10SR"
+"Codepage"=dword:0000fde9
+"OSDFileURL"="http://www.iegallery.com/zh-cn/AddOns/DownloadAddOn?resourceId=852"
+"FaviconURL"="http://www.bing.com/favicon.ico"
+"FaviconPath"="%APPDATA%\\shanbopic\\bing.ico"
+"TopResultURLFallback"="http://www.bing.com/search?q={searchTerms}&src=IE-TopResult&FORM=IE10TR"
+"SuggestionsURLFallback"="http://api.bing.com/qsml.aspx?query={searchTerms}&maxwidth={ie:maxWidth}&rowheight={ie:rowHeight}&sectionHeight={ie:sectionHeight}&FORM=IE10SS&market={language}"
+"FaviconURLFallback"="http://www.bing.com/favicon.ico"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{4384B9D5-B5A1-45D9-82F8-0731693B53C1}]
+"DisplayName"="京东商城"
+"URL"="http://click.union.360buy.com/JdClick/?unionId=21073&to=http://search.360buy.com/Search?keyword={searchTerms}"
+"FaviconPath"="%APPDATA%\\shanbopic\\jingdong.ico"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{69705ADC-B504-4CD8-9CF5-5DCBC3C118E0}]
+"DisplayName"="Google"
+"URL"="http://www.google.cn/search?hl=zh-CN&q={searchTerms}"
+"OSDFileURL"="http://www.iegallery.com/zh-cn/AddOns/DownloadAddOn?resourceId=851"
+"FaviconURL"="http://www.google.cn/favicon.ico"
+"FaviconPath"="%APPDATA%\\shanbopic\\google.ico"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{4384B9D5-B5A1-45D9-82F8-0731693B53C4}]
+"DisplayName"="淘宝购物"
+"URL"="http://s8.taobao.com/search?q={searchTerms}&pid=mm_35581435_3479085_11342945"
+"FaviconPath"="%APPDATA%\\shanbopic\\taobao.ico"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{4384B9D5-B5A1-45D9-82F8-0731693B53C5}]
+"DisplayName"="当当网"
+"URL"="http://union.dangdang.com/transfer/transfer.aspx?from=P-314254&backurl=http://search.dangdang.com/search.php?key={searchTerms}"
+"FaviconPath"="%APPDATA%\\shanbopic\\dangdang.ico"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{4384B9D5-B5A1-45D9-82F8-0731693B53C6}]
+"DisplayName"="凡客诚品"
+"URL"="http://www.vancl.com/product/searchnew.aspx?new=1&k={searchTerms}&source=kd1000"
+"FaviconPath"="%APPDATA%\\shanbopic\\fanke.ico"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{4384B9D5-B5A1-45D9-82F8-0731693B53C7}]
+"DisplayName"="搜狗"
+"URL"="http://www.sogou.com/sogou?query={searchTerms}&pid=sogou-brse-b1301141feffabac"
+"FaviconPath"="%APPDATA%\\shanbopic\\sougou.ico"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{4384B9D5-B5A1-45D9-82F8-0731693B53C8}]
+"DisplayName"="亚马逊购物"
+"URL"="http://www.amazon.cn/gp/search?ie=UTF8&keywords={searchTerms}&tag=kd1000-23&index=aps&linkCode=ur2&camp=0&creative=0"
+"FaviconPath"="%APPDATA%\\shanbopic\\yamaxun.ico"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{44177982-996D-4b79-B29F-5B60E13A5169}]
+"DisplayName"="百度"
+"URL"="http://www.baidu.com/s?wd={searchTerms}&ie=utf-8"
+"ShowSearchSuggestions"=dword:00000001
+"SuggestionsURL_JSON"="http://suggestion.baidu.com/su?wd={searchTerms}&action=opensearch&ie=utf-8&from=ie8"
+"Codepage"=dword:0000fde9
+"OSDFileURL"="http://www.iegallery.com/zh-cn/AddOns/DownloadAddOn?resourceId=857"
+"FaviconURL"="http://www.baidu.com/favicon.ico"
+"FaviconPath"="%APPDATA%\\shanbopic\\baidu.ico"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{A5C25BE5-DCE3-4C2F-9ABE-E8FD0C7DD7D5}]
+"DisplayName"="360搜索"
+"URL"="http://www.so.com/s?q={searchTerms}&ie=utf-8&src=ie_addr"
+"ShowSearchSuggestions"=dword:00000001
+"SuggestionsURL_JSON"="http://sug.so.360.cn/suggest?word={searchTerms}&encodein=utf-8&encodeout=utf-8&outfmt=json&src=ie_addr_sug"
+"Codepage"=dword:0000fde9
+"OSDFileURL"="http://www.iegallery.com/zh-cn/AddOns/DownloadAddOn?resourceId=15848"
+"FaviconURL"="http://www.so.com/favicon.ico"
+"FaviconPath"="%APPDATA%\\shanbopic\\360.ico"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\SearchScopes]
+"DefaultScope"="{44177982-996D-4b79-B29F-5B60E13A5169}"
+"ShowSearchSuggestionsGlobal"=dword:00000001
+"DisplayQuickPick"=dword:00000001
+"DownloadRetries"=dword:00000000
+"Version"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\SearchScopes\{2F583017-2409-446F-A3F2-0D681A8CEB08}]
+"DisplayName"="Bing"
+"URL"="http://www.bing.com/search?q={searchTerms}&src=IE-SearchBox&FORM=IE10SR"
+"Codepage"=dword:0000fde9
+"OSDFileURL"="http://www.iegallery.com/zh-cn/AddOns/DownloadAddOn?resourceId=852"
+"FaviconURL"="http://www.bing.com/favicon.ico"
+"FaviconPath"="%APPDATA%\\shanbopic\\bing.ico"
+"TopResultURLFallback"="http://www.bing.com/search?q={searchTerms}&src=IE-TopResult&FORM=IE10TR"
+"SuggestionsURLFallback"="http://api.bing.com/qsml.aspx?query={searchTerms}&maxwidth={ie:maxWidth}&rowheight={ie:rowHeight}&sectionHeight={ie:sectionHeight}&FORM=IE10SS&market={language}"
+"FaviconURLFallback"="http://www.bing.com/favicon.ico"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\SearchScopes\{4384B9D5-B5A1-45D9-82F8-0731693B53C1}]
+"DisplayName"="京东商城"
+"URL"="http://click.union.360buy.com/JdClick/?unionId=21073&to=http://search.360buy.com/Search?keyword={searchTerms}"
+"FaviconPath"="%APPDATA%\\shanbopic\\jingdong.ico"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\SearchScopes\{69705ADC-B504-4CD8-9CF5-5DCBC3C118E0}]
+"DisplayName"="Google"
+"URL"="http://www.google.cn/search?hl=zh-CN&q={searchTerms}"
+"OSDFileURL"="http://www.iegallery.com/zh-cn/AddOns/DownloadAddOn?resourceId=851"
+"FaviconURL"="http://www.google.cn/favicon.ico"
+"FaviconPath"="%APPDATA%\\shanbopic\\google.ico"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\SearchScopes\{4384B9D5-B5A1-45D9-82F8-0731693B53C4}]
+"DisplayName"="淘宝购物"
+"URL"="http://s8.taobao.com/search?q={searchTerms}&pid=mm_35581435_3479085_11342945"
+"FaviconPath"="%APPDATA%\\shanbopic\\taobao.ico"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\SearchScopes\{4384B9D5-B5A1-45D9-82F8-0731693B53C5}]
+"DisplayName"="当当网"
+"URL"="http://union.dangdang.com/transfer/transfer.aspx?from=P-314254&backurl=http://search.dangdang.com/search.php?key={searchTerms}"
+"FaviconPath"="%APPDATA%\\shanbopic\\dangdang.ico"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\SearchScopes\{4384B9D5-B5A1-45D9-82F8-0731693B53C6}]
+"DisplayName"="凡客诚品"
+"URL"="http://www.vancl.com/product/searchnew.aspx?new=1&k={searchTerms}&source=kd1000"
+"FaviconPath"="%APPDATA%\\shanbopic\\fanke.ico"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\SearchScopes\{4384B9D5-B5A1-45D9-82F8-0731693B53C7}]
+"DisplayName"="搜狗"
+"URL"="http://www.sogou.com/sogou?query={searchTerms}&pid=sogou-brse-b1301141feffabac"
+"FaviconPath"="%APPDATA%\\shanbopic\\sougou.ico"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\SearchScopes\{4384B9D5-B5A1-45D9-82F8-0731693B53C8}]
+"DisplayName"="亚马逊购物"
+"URL"="http://www.amazon.cn/gp/search?ie=UTF8&keywords={searchTerms}&tag=kd1000-23&index=aps&linkCode=ur2&camp=0&creative=0"
+"FaviconPath"="%APPDATA%\\shanbopic\\yamaxun.ico"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\SearchScopes\{44177982-996D-4b79-B29F-5B60E13A5169}]
+"DisplayName"="百度"
+"URL"="http://www.baidu.com/s?wd={searchTerms}&ie=utf-8"
+"ShowSearchSuggestions"=dword:00000001
+"SuggestionsURL_JSON"="http://suggestion.baidu.com/su?wd={searchTerms}&action=opensearch&ie=utf-8&from=ie8"
+"Codepage"=dword:0000fde9
+"OSDFileURL"="http://www.iegallery.com/zh-cn/AddOns/DownloadAddOn?resourceId=857"
+"FaviconURL"="http://www.baidu.com/favicon.ico"
+"FaviconPath"="%APPDATA%\\shanbopic\\baidu.ico"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\SearchScopes\{A5C25BE5-DCE3-4C2F-9ABE-E8FD0C7DD7D5}]
+"DisplayName"="360搜索"
+"URL"="http://www.so.com/s?q={searchTerms}&ie=utf-8&src=ie_addr"
+"ShowSearchSuggestions"=dword:00000001
+"SuggestionsURL_JSON"="http://sug.so.360.cn/suggest?word={searchTerms}&encodein=utf-8&encodeout=utf-8&outfmt=json&src=ie_addr_sug"
+"Codepage"=dword:0000fde9
+"OSDFileURL"="http://www.iegallery.com/zh-cn/AddOns/DownloadAddOn?resourceId=15848"
+"FaviconURL"="http://www.so.com/favicon.ico"
+"FaviconPath"="%APPDATA%\\shanbopic\\360.ico"
+
+
+#禁用加速器
+[-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Activities]
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Activities\博客]
+"DefaultActivity"=""
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Activities\博客\live.com]
+"Deleted"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Activities\映射]
+"DefaultActivity"=""
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Activities\映射\live.com]
+"Deleted"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Activities\电子邮件]
+"DefaultActivity"=""
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Activities\电子邮件\live.com]
+"Deleted"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Activities\转换]
+"DefaultActivity"=""
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Activities\转换\live.com]
+"Deleted"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+;网站主页设置
+"Start Page"="http://www.baidu.com/"
+;设置IE首页的“默认值”
+"Default_Page_URL"="http://www.baidu.com/"
+;开启ClearType
+"UseClearType"="yes"
+;以全屏方式打开IE
+"FullScreen"="no"
+;让 IE 的“另存为”下载窗口下载完成时不自动关闭〔系统默认〕
+"NotifyDownloadComplete"="yes"
+
+#Internet选项
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+;从不进行拨号连接〔避免弹窗〕
+"EnableAutodial"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+;从不进行拨号连接〔避免弹窗〕
+"EnableAutodial"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_MAXCONNECTIONSPER1_0SERVER]
+;关闭多个窗口不提示弹出窗口提示
+"FirstTime"=dword:00000000        
+
+#关闭IE自动更新
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Infodelivery\Restrictions]
+"NoUpdateCheck"=dword:00000001
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"NoUpdateCheck"=dword:00000001
+
+#IE窗口最大化
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Window_Placement"=hex:2c,00,00,00,00,00,00,00,01,00,00,00,ff,ff,ff,ff,ff,ff,\
+  ff,ff,ff,ff,ff,ff,ff,ff,ff,ff,00,00,00,00,00,00,00,00,00,08,00,00,e2,05,00,\
+  00
+
+#禁止IE提示脚本运行
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Styles]
+"MaxScriptStatements"=dword:ffffffff
+
+#彻底删除IE链接文件夹
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Toolbar]
+"LinksFolderName"=""
+"Locked"=dword:00000001
+"ShowDiscussionButton"="Yes"
+
+#IE开启ClearType
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"UseClearType"="yes" 
+
+#IE开启图像自动缩放
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Enable AutoImageResize"="yes"
+
+-IE11优化
+#禁用默认提供搜索提示
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Infodelivery\Restrictions]
+"NoChangeDefaultSearchProvider"=dword:00000000
+
+#禁用首次运行提示
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Main]
+"Check_Associations"="no"
+"DisableFirstRunCustomize"=dword:00000001
+"NoUpdateCheck"=dword:00000001
+
+#禁用弹出窗口过滤级别
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\restrictions]
+"DisablePopupFilterLevel"=dword:00000001
+"NoCrashDetection"=dword:00000001
+
+#禁用搜索建议
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\SearchScopes]
+"ShowSearchSuggestionsGlobal"=dword:00000000
+
+#禁用修复安全设置
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Security]
+"DisableFixSecuritySettings"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\SQM]
+"DisableCustomerImprovementProgram"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoMSAppLogo5ChannelNotify"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Ext]
+"DisableAddonLoadTimePerformanceNotifications"=dword:00000001
+"IgnoreFrameApprovalCheck"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Infodelivery\Restrictions]
+"NoChangeDefaultSearchProvider"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Main]
+"DisableFirstRunCustomize"=dword:00000001
+"EnableAutoUpgrade"=dword:00000000
+"NoUpdateCheck"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Restrictions]
+"DisablePopupFilterLevel"=dword:00000001
+"NoCrashDetection"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\SearchScopes]
+"ShowSearchSuggestionsGlobal"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Security]
+"DisableFixSecuritySettings"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\SQM]
+"DisableCustomerImprovementProgram"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\SharedAccess\Epoch]
+"Epoch"=dword:00000182
+
+#关闭安全提示
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Security]
+"DisableSecuritySettingsCheck"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Security]
+"DisableSecuritySettingsCheck"=dword:00000001
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3]
+"1806"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3]
+"1806"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Associations]
+"ModRiskFileTypes"=".exe .reg .bat"
+"LowRiskFileTypes"=".exe"
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Associations]
+"ModRiskFileTypes"=".exe .reg .bat"
+"LowRiskFileTypes"=".exe"
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Attachments]
+"SaveZoneInformation"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Attachments]
+"SaveZoneInformation"=dword:00000001
+
+IE策略组高级设置
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Download]
+"CheckExeSignatures"="no"
+"RunInvalidSignatures"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Main]
+"Isolation"="PMIL"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\Internet Settings]
+"CertificateRevocation"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoDriveTypeAutoRun"=dword:00000091
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Download]
+"CheckExeSignatures"="no"
+"RunInvalidSignatures"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Main]
+"Isolation"="PMIL"
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings]
+"CertificateRevocation"=dword:00000000
+
+强制打开对未标记的安全脚本的ActiveX
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\3]
+"1201"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3]
+"1201"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3]
+"1201"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\3]
+"1201"=dword:00000000
+
+#使用软件呈现而不使用GPU呈现(开启)
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"UseSWRender"=dword:00000001
+
+#IE11按了F12后关闭后打开卡死BUG解决方法
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Toolbar\WebBrowser]
+"ITBar7Layout"=-

@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+#设置为公用网络(0|公用网络,1|家庭网络,2|专用网络)
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles\{83113BFF-729A-4054-81E1-16D284DD589F}]
+"Category"=dword:00000000
+
+#设置开机不再提示设置网络
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Network\NetworkLocationWizard]
+"HideWizard"=dword:00000001

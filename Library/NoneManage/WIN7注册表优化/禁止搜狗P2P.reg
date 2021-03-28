@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+#½ûÖ¹ËÑ¹·P2P
+[HKEY_CURRENT_USER\Software\SogouInput]
+"UpUseBT"=dword:00000000

@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Notepad++_file\shell\Edit] 
+;@="&Edit" 
+
+;[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Notepad++_file\shell\Edit\command] 
+;@="\"D:\\Program\\Office2010\\Office14\\msohtmed.exe\" %1"
+ 
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Notepad++_file\shell\Print] 
+;@="&Print" 
+
+;[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Notepad++_file\shell\Print\command] 

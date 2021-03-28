@@ -1,0 +1,23 @@
+Windows Registry Editor Version 5.00
+
+#¹Ø±ÕËùÓÐ¿ì½Ý¼ü(Õ³ÖÍ¼ü£¬É¸Ñ¡¼ü£¬ÇÐ»»¼ü)
+;For the Current User (Usually Me)
+;Disable Sticky Keys
+[HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys]
+"Flags"="506"
+;Disable Filter Keys
+[HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response]
+"Flags"="122"
+;Disable Toggle Keys
+[HKEY_CURRENT_USER\Control Panel\Accessibility\ToggleKeys]
+"Flags"="58"
+;For when noone is logged in
+;Disable Sticky Keys
+[HKEY_USERS\.DEFAULT\Control Panel\Accessibility\StickyKeys]
+"Flags"="506"
+;Disable Filter Keys
+[HKEY_USERS\.DEFAULT\Control Panel\Accessibility\Keyboard Response]
+"Flags"="122"
+;Disable Toggle Keys
+[HKEY_USERS\.DEFAULT\Control Panel\Accessibility\ToggleKeys]
+"Flags"="58"

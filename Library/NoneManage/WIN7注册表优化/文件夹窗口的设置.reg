@@ -1,0 +1,45 @@
+Windows Registry Editor Version 5.00
+
+#文件夹窗口的设置( Navigation pane 右边的导航窗格,工具条添加复制粘贴删除按钮)
+[HKEY_CLASSES_ROOT\CLSID\{323CA680-C24D-4099-B94D-446DD2D7249E}\ShellFolder]
+"Attributes"=dword:a9400100
+;隐藏“收藏夹”项目(文件夹窗口--资源管理器窗口)
+;将Attributes的键值由 a0900100 修改为 a9400100
+
+[HKEY_CLASSES_ROOT\CLSID\{B4FB3F98-C1EA-428d-A78A-D1F5659CBA93}\ShellFolder]
+"Attributes"=dword:b094010c
+;隐藏“家庭组“项目
+;将Attributes的键值由 b084010c 修改为 b094010c
+
+[HKEY_CLASSES_ROOT\CLSID\{031E4825-7B94-4dc3-B131-E946B44C8DD5}\ShellFolder]
+"Attributes"=dword:b090010d
+;隐藏“库”项目
+;将Attributes的键值由 b080010d 修改为 b090010d
+
+[HKEY_CLASSES_ROOT\CLSID\{26EE0668-A00A-44D7-9371-BEB064C98683}\ShellFolder]
+"Attributes"=dword:a0900004
+;隐藏“控制面板”项目
+;将Attributes的键值由a0000004 修改为 a0900004
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer])
+"AlwaysShowClassicMenu"=dword:00000001
+;win7资源管理器中显示菜单栏
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"NavPaneShowAllFolders"=dword:00000001
+;win7 显示所有文件夹(文件夹窗口左侧 侧边栏 目录树)
+
+[HKEY_CLASSES_ROOT\CLSID\{59031a47-3f72-44a7-89c5-5595fe6b30ee}\ShellFolder]
+"Attributes"=dword:f094012d
+;隐藏用户文件夹比如administrator文件夹(包括桌面上也会一起去掉)
+;将Attributes的键值由 f084012d 修改为 f094012d
+
+[HKEY_CLASSES_ROOT\CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}\ShellFolder]
+"Attributes"=dword:b0940064
+;隐藏“网络”项目
+;将Attributes的键值由 b0040064 修改为 b0940064
+
+[HKEY_CLASSES_ROOT\CLSID\{031E4825-7B94-4dc3-B131-E946B44C8DD5}\ShellFolder]
+"Attributes"=dword:b090010d
+;隐藏“库”项目!
+;将Attributes的键值由 b080010d 修改为 b090010d

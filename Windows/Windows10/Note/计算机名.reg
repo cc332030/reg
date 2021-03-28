@@ -1,0 +1,14 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\ComputerName\ComputerName] 
+;"ComputerName"="DESKTOP-VL946TC" 
+"ComputerName"="WIN-016022314" 
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Tcpip\Parameters] 
+;"NV Hostname"="DESKTOP-VL946TC" 
+"NV Hostname"="WIN-016022314" 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName] 
+;"ComputerName"="DESKTOP-VL946TC" 
+"ComputerName"="WIN-016022314" 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters] 
+;"NV Hostname"="DESKTOP-VL946TC" 
+"NV Hostname"="WIN-016022314" 

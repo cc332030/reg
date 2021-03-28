@@ -1,0 +1,29 @@
+﻿Windows Registry Editor Version 5.00
+
+;UsersLibraries
+;库	禁用:b090010d	恢复:b080010d	改权限
+[HKEY_CLASSES_ROOT\CLSID\{031E4825-7B94-4dc3-B131-E946B44C8DD5}\ShellFolder]
+"Attributes"=dword:b090010d
+
+[HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{031E4825-7B94-4dc3-B131-E946B44C8DD5}\ShellFolder]
+"Attributes"=dword:b090010d
+
+
+
+;网络	禁用:b0940064	恢复:b0040064	改权限才能操作
+[HKEY_CLASSES_ROOT\CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}\ShellFolder]
+"Attributes"=dword:b0940064
+
+[HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}\ShellFolder]
+"Attributes"=dword:b0940064
+
+
+
+;失效	收藏夹	禁用:b090010d	恢复:a0900100	改权限
+
+;[HKEY_CLASSES_ROOT\CLSID\{323CA680-C24D-4099-B94D-446DD2D7249E}\ShellFolder]
+;"Attributes"=dword:b090010d
+
+;家庭组	禁用:b094010c	恢复:b084010c	改权限
+;[HKEY_CLASSES_ROOT\CLSID\{B4FB3F98-C1EA-428d-A78A-D1F5659CBA93}\ShellFolder]
+;"Attributes"=dword:b094010c

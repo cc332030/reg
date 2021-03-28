@@ -1,0 +1,15 @@
+
+secedit /export /cfg sec.inf
+将安全选项保存为sec.inf文件 在C:\Documents and Settings\Administrator目录下
+
+
+secedit /import /db  sec.sdb  /cfg sec.inf /overwrite 
+将sec.inf转换为sec.sdb文件 /overwrite可以不加上
+
+
+secedit /configure /db sec.sdb 
+将sec.sdb文件导入策略组的安全设置
+
+
+gpupdate /force
+更新策略组

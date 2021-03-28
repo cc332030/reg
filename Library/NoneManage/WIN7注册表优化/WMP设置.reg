@@ -1,0 +1,25 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsMediaPlayer]
+;不显示首次使用对话框
+"GroupPrivacyAcceptance"=dword:00000001
+;防止WMP自动更新
+"DisableAutoUpdate"=dword:00000001
+;播放WMP时关闭屏保
+"EnableScreenSaver"=dword:00000001
+;防止媒体共享
+"PreventLibrarySharing"=dword:00000001
+
+#Messenge设置模块
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Messenger\Client]
+;初始化时不自动启动Windows Messenger
+"PreventAutoRun"=dword:00000001
+;不允许运行Windows Messenger
+"PreventRun"=dword:00000001
+
+#提高WMP的MP3编码能力
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MediaPlayer\Settings\MP3Encoding]
+"HighRate"=dword:0002EE00
+"LowRate"=dword:0000DAC0
+"MediumHighRate"=dword:0001F400
+"MediumRate"=dword:0000FA00

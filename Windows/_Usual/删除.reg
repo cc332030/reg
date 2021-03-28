@@ -1,0 +1,112 @@
+Windows Registry Editor Version 5.00
+
+;=============================删除项==========================================
+
+;------------------自启-------------------------------------
+
+;自启1
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
+"BCSSync"=-
+"HotKeysCmds"=-
+"RtHDVCpl"=-
+"RtHDVBg_Dolby"=-
+"IgfxTray"=-
+"SynTPEnh"=-
+"SynLenovoGestureMgr"=-
+"Persistence"=-
+"SunJavaUpdateSched"=-
+"WindowsDefender"=-
+"NvBackend"=-
+
+;自启2
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Run]
+"USB3MON"=-
+"332BigDog"=-
+"IAStorIcon"=-
+"Dolby Home Theater v4"=-
+"MuteSync"=-
+"SynTPEnh"=-
+"Drcom"=-
+
+;自启3
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run]
+"BaiduYunDetect"=-
+"sesvc"=-
+
+
+;禁用 Windows 自带的 Zip 功能
+[-HKEY_CLASSES_ROOT\.zip\CompressedFolder]
+[-HKEY_CLASSES_ROOT\CLSID\{E88DCCE0-B7B3-11d1-A9F0-00AA0060FA31}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CompressedFolder]
+
+;删除右键新建菜单的ZIP压缩文件
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.zip\ShellNew]
+
+;禁用视频预览
+[-HKEY_CLASSES_ROOT\.avi\ShellEx] 
+[-HKEY_CLASSES_ROOT\.asf\ShellEx] 
+[-HKEY_CLASSES_ROOT\.mpeg\ShellEx] 
+[-HKEY_CLASSES_ROOT\.mpg\ShellEx] 
+[-HKEY_CLASSES_ROOT\.wmv\ShellEx]
+
+;软媒
+[-HKEY_CURRENT_USER\Software\RuanMei]
+
+;万能驱动
+[-HKEY_LOCAL_MACHINE\SOFTWARE\WanDrv]
+
+;Windows Mail
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Active Setup\Installed Components\{44BBA840-CC51-11CF-AAFA-00AA00B6015C}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Active Setup\Installed Components\{44BBA840-CC51-11CF-AAFA-00AA00B6015C}]
+
+
+;User64
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
+"OneDrive"=-
+
+;Windows Mail
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Active Setup\Installed Components\{44BBA840-CC51-11CF-AAFA-00AA00B6015C}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Active Setup\Installed Components\{44BBA840-CC51-11CF-AAFA-00AA00B6015C}]
+
+;intel
+[-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\igfxCUIService1.0.0.0]
+
+;NVIDIA 右键不显示用图形处理器打开
+[HKEY_CURRENT_USER\Software\NVIDIA Corporation\Global\CoProcManager] 
+;"ShowContextMenu"=dword:00000001 
+"ShowContextMenu"=dword:00000000 
+
+;NVIDIA 桌面上下文
+[HKEY_CURRENT_USER\Software\NVIDIA Corporation\Global\NvCplApi\Policies] 
+;"ContextUIPolicy"=dword:00000002 
+"ContextUIPolicy"=dword:00000000 
+
+;NVIDIA 通知托盘图标
+[HKEY_CURRENT_USER\Software\NVIDIA Corporation\NvTray] 
+;"StartOnLogin"=dword:00000001 
+"StartOnLogin"=dword:00000000 
+
+;NVIDIA 通知托盘图标
+[HKEY_CURRENT_USER\Software\NVIDIA Corporation\Global\CoProcManager] 
+;"ShowTrayIcon"=dword:00000001
+"ShowTrayIcon"=dword:00000000 
+
+;NVIDIA
+[-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvsvc]
+
+;Windows Defender
+[-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Sense]
+[-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdNisSvc]
+[-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinDefend]
+
+;触控板
+[-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SynTPEnhService]
+
+;禁用 Windows 自带的 Zip 功能
+[-HKEY_CLASSES_ROOT\.zip\CompressedFolder]
+[-HKEY_CLASSES_ROOT\CLSID\{E88DCCE0-B7B3-11d1-A9F0-00AA0060FA31}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CompressedFolder]
+
+;删除右键新建菜单的ZIP压缩文件
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.zip\ShellNew]
+

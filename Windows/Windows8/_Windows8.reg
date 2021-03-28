@@ -1,0 +1,715 @@
+Windows Registry Editor Version 5.00
+
+;桌面显示 这台电脑
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu] 
+;"{20D04FE0-3AEA-1069-A2D8-08002B30309D}"=dword:00000001 
+"{20D04FE0-3AEA-1069-A2D8-08002B30309D}"=dword:00000000 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel] 
+;"{20D04FE0-3AEA-1069-A2D8-08002B30309D}"=dword:00000001 
+"{20D04FE0-3AEA-1069-A2D8-08002B30309D}"=dword:00000000 
+
+;桌面显示IE
+;[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel] 
+;"{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}"=dword:00000001 
+;"{B416D21B-3B22-B6D4-BBD3-BBD452DB3D5B}"=dword:00000000 
+
+;桌面显示 用户文件
+"{59031a47-3f72-44a7-89c5-5595fe6b30ee}"=dword:00000000 
+
+;虚拟内存 16 - 16384
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager\Memory Management] 
+;"PagingFiles"=hex(7):3f,00,3a,00,5c,00,70,00,61,00,67,00,65,00,66,00,69,00,6c,\
+;   00,65,00,2e,00,73,00,79,00,73,00,00,00,00,00 
+"PagingFiles"=hex(7):63,00,3a,00,5c,00,70,00,61,00,67,00,65,00,66,00,69,00,6c,\
+   00,65,00,2e,00,73,00,79,00,73,00,20,00,31,00,36,00,20,00,31,00,36,00,33,00,\
+   38,00,34,00,00,00,00,00 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management] 
+;"PagingFiles"=hex(7):3f,00,3a,00,5c,00,70,00,61,00,67,00,65,00,66,00,69,00,6c,\
+;   00,65,00,2e,00,73,00,79,00,73,00,00,00,00,00 
+"PagingFiles"=hex(7):63,00,3a,00,5c,00,70,00,61,00,67,00,65,00,66,00,69,00,6c,\
+   00,65,00,2e,00,73,00,79,00,73,00,20,00,31,00,36,00,20,00,31,00,36,00,33,00,\
+   38,00,34,00,00,00,00,00 
+
+;管理员批准模式
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"EnableLUA"=dword:00000000
+"FilterAdministratorToken"=dword:00000000
+
+;保存最近打开的文档
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoRecentDocsHistory"=-
+
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced] 
+;显示拓展名
+;"HideFileExt"=dword:00000001 
+"HideFileExt"=dword:00000000 
+
+;显示隐藏的文件
+;"Hidden"=dword:00000002 
+"Hidden"=dword:00000001 
+
+;显示隐藏的系统文件
+;"ShowSuperHidden"=dword:00000000 
+"ShowSuperHidden"=dword:00000001 
+
+
+
+
+
+;我的电脑右键添加控制面板
+;[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\Control]
+;@=hex(2):a7,63,36,52,62,97,7f,67,00,00
+;"SuppressionPolicy"=dword:4000003c
+
+;[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\Control\command]
+;@=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,\
+;  00,25,00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,63,00,\
+;  6f,00,6e,00,74,00,72,00,6f,00,6c,00,2e,00,65,00,78,00,65,00,00,00
+
+;我的电脑右键添加设备管理器
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\DevMgr]
+@=hex(2):be,8b,07,59,a1,7b,06,74,68,56,00,00
+"SuppressionPolicy"=dword:4000003c
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\DevMgr\command]
+@=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,\
+  00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,6d,00,6d,00,\
+  63,00,2e,00,65,00,78,00,65,00,20,00,2f,00,73,00,20,00,25,00,53,00,79,00,73,\
+  00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,00,5c,00,73,00,79,00,73,00,\
+  74,00,65,00,6d,00,33,00,32,00,5c,00,64,00,65,00,76,00,6d,00,67,00,6d,00,74,\
+  00,2e,00,6d,00,73,00,63,00,00,00
+
+;我的电脑右键添加组策略
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\GpEdit]
+@=hex(2):c4,7e,56,7b,65,75,00,00
+"SuppressionPolicy"=dword:4000003c
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\GpEdit\command]
+@=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,\
+  00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,6d,00,6d,00,\
+  63,00,2e,00,65,00,78,00,65,00,20,00,2f,00,73,00,20,00,25,00,53,00,79,00,73,\
+  00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,00,5c,00,73,00,79,00,73,00,\
+  74,00,65,00,6d,00,33,00,32,00,5c,00,67,00,70,00,65,00,64,00,69,00,74,00,2e,\
+  00,6d,00,73,00,63,00,00,00
+
+;我的电脑右键添加注册表
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\Regedit]
+@=hex(2):e8,6c,8c,51,68,88,00,00
+"SuppressionPolicy"=dword:4000003c
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\Regedit\command]
+@=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,\
+  00,5c,00,72,00,65,00,67,00,65,00,64,00,69,00,74,00,2e,00,65,00,78,00,65,00,\
+  00,00
+
+;我的电脑右键添加服务
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\Services]
+@=hex(2):0d,67,a1,52,00,00
+"SuppressionPolicy"=dword:4000003c
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\Services\command]
+@=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,\
+  00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,6d,00,6d,00,\
+  63,00,2e,00,65,00,78,00,65,00,20,00,2f,00,73,00,20,00,25,00,53,00,79,00,73,\
+  00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,00,5c,00,73,00,79,00,73,00,\
+  74,00,65,00,6d,00,33,00,32,00,5c,00,73,00,65,00,72,00,76,00,69,00,63,00,65,\
+  00,73,00,2e,00,6d,00,73,00,63,00,00,00
+
+;为DLL文件右键加上(反)注册菜单
+;[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\dllfile\shell\Reg]
+;@="注册DLL"
+;[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\dllfile\shell\Reg\Command]
+;@="regsvr32 %1"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\dllfile\shell\UnReg]
+@="反注册DLL "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\dllfile\shell\UnReg\Command]
+@="regsvr32 /u %1"
+
+;为OCX文件右键加上(反)注册菜单
+;[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\ocxfile\shell\Reg]
+;@="注册OCX"
+;[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\ocxfile\shell\Reg\Command]
+;@="regsvr32 %1"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\ocxfile\shell\UnReg]
+@="反注册OCX"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\ocxfile\shell\UnReg\Command]
+@="regsvr32 /u %1"
+
+;获取所有权
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\runas]
+@="获取所有权"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\runas\Command]
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\runas]
+@="获取所有权"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\runas\Command]
+@="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\exefile\shell\TakeAuthority]
+@="获取所有权"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\exefile\shell\TakeAuthority\Command]
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+
+;-----------------------系统组策略--------------------------
+
+;关闭UAC
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System] 
+;"PromptOnSecureDesktop"=dword:00000001 
+"PromptOnSecureDesktop"=dword:00000000 
+;"ConsentPromptBehaviorAdmin"=dword:00000005 
+"ConsentPromptBehaviorAdmin"=dword:00000000 
+
+;禁止 OneDrive
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Skydrive] 
+"DisableFileSync"=dword:00000001 
+
+;关闭 Windows Defender
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender] 
+"DisableAntiSpyware"=dword:00000001 
+
+;关机系统还原
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\SystemRestore] 
+"DisableSR"=dword:00000001 
+
+;关闭创建系统还原检查点
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Installer] 
+"LimitSystemRestoreCheckpointing"=dword:00000001 
+
+;阻止 WMP 自动更新
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsMediaPlayer] 
+"DisableAutoUpdate"=dword:00000001 
+
+;不显示 WMP 首次使用对话框
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsMediaPlayer] 
+"GroupPrivacyAcceptance"=dword:00000001 
+
+;提高 WMP 的 MP3 编码能力
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MediaPlayer\Settings\MP3Encoding]
+"HighRate"=dword:0002EE00
+"LowRate"=dword:0000DAC0
+"MediumHighRate"=dword:0001F400
+"MediumRate"=dword:0000FA00
+
+;启用 WMP 的 DVD 播放功能
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Player\Settings]
+"EnableDVDUI"="yes"
+
+;禁用错误报告
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\PCHealth\ErrorReporting] 
+"ForceQueueMode"=dword:00000000 
+
+;记事本自动换行
+[HKEY_CURRENT_USER\Software\Microsoft\Notepad] 
+;"fWrap"=dword:00000000 
+"fWrap"=dword:00000001 
+
+;禁用自动更新
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU] 
+"NoAutoUpdate"=dword:00000001 
+
+;不显示安装更新并关机
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU] 
+"NoAUShutdownOption"=dword:00000001 
+
+;禁止唤醒电脑安装计划中的更新
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU] 
+"AUPowerManagement"=dword:00000000 
+
+;关闭安全中心
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Security Center] 
+"SecurityCenterInDomain"=dword:00000000 
+
+;关闭 Windows SmartScream
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System] 
+"EnableSmartScreen"=dword:00000000 
+
+;不显示睡眠
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer] 
+"ShowSleepOption"=dword:00000000 
+
+;关闭 Metra 自动更新
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore] 
+"AutoDownload"=dword:00000002 
+
+;关闭 Metra 自动下载安装更新
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore] 
+"AutoDownload"=dword:00000002 
+
+;关闭下载游戏信息
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\GameUX] 
+"DownloadGameInfo"=dword:00000000 
+
+;关闭游戏更新
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\GameUX] 
+"GameUpdateOptions"=dword:00000000 
+
+;关闭跟踪上次游戏时间
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\GameUX] 
+"ListRecentlyPlayed"=dword:00000000 
+
+;关闭所有自动播放
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer] 
+"NoDriveTypeAutoRun"=dword:000000ff 
+
+;加快关机
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System] 
+"AllowBlockingAppsAtShutdown"=dword:00000000 
+
+;-------------------用户组策略------------------------------
+
+;关闭操作中心
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer] 
+"HideSCAHealth"=dword:00000001 
+
+;关闭窗口靠近边缘自动最大化
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"WindowArrangementActive"="0"
+
+;---------------------------------------------
+
+
+;任务栏和开始菜单中的动画
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TaskbarAnimations]
+"DefaultApplied"=dword:00000000
+"DefaultValue"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\MenuAnimation]
+"DefaultApplied"=dword:00000000
+"DefaultValue"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TooltipAnimation]
+"DefaultApplied"=dword:00000000
+"DefaultValue"=dword:00000000
+;
+;平滑滚动列表框
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListBoxSmoothScrolling]
+"DefaultApplied"=dword:00000001
+;
+;平滑屏幕字体边缘
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\FontSmoothing]
+"DefaultApplied"=dword:00000001
+"DefaultValue"=dword:00000001
+;
+;为每种文件夹类型使用一种背景图片
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListviewWatermark]
+"DefaultApplied"=dword:00000001
+"DefaultValue"=dword:00000001
+;
+;显示半透明的选择长方形
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListviewAlphaSelect]
+"DefaultApplied"=dword:00000000
+"DefaultValue"=dword:00000000
+;
+;显示半透明的选择长方形
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\SelectionFade]
+"DefaultApplied"=dword:00000000
+"DefaultValue"=dword:00000000
+;
+;在窗口下显示阴影
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DropShadow]
+"DefaultApplied"=dword:00000000
+"DefaultValue"=dword:00000000
+;
+;在鼠标指针下显示阴影
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\CursorShadow]
+"DefaultApplied"=dword:00000000
+;
+;在最大化和最小化时显示动态窗口
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\AnimateMinMax]
+"DefaultApplied"=dword:00000000
+;
+;拖动时显示窗口内容
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DragFullWindows]
+"DefaultApplied"=dword:00000000
+;
+;关闭窗口的动画效果、桌面图标-标题换行
+[HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
+"MinAnimate"="0"
+"IconTitleWrap"="1"
+
+;窗口内动画控件和元素
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ComboBoxAnimation]
+"DefaultValue"=dword:00000000
+;
+;任务栏和开始菜单中的动画
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TaskbarAnimations]
+"DefaultValue"=dword:00000000
+"DefaultByAlphaTest"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TooltipAnimation]
+"DefaultValue"=dword:00000000
+"DefaultByAlphaTest"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\MenuAnimation]
+"DefaultValue"=dword:00000000
+"DefaultByAlphaTest"=dword:00000000
+;
+;平滑滚动列表框
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListBoxSmoothScrolling]
+"DefaultValue"=dword:00000001
+;
+;平滑屏幕字体边缘
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\FontSmoothing]
+"DefaultValue"=dword:00000001
+"DefaultByFontTest"=dword:00000001
+;
+;为每种文件夹类型使用一种背景图片
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListviewWatermark]
+"DefaultValue"=dword:00000001
+;
+;显示半透明的选择长方形
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListviewAlphaSelect]
+"DefaultValue"=dword:00000000
+"DefaultByAlphaTest"=dword:00000000
+;
+;显示半透明的选择长方形
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\SelectionFade]
+"DefaultValue"=dword:00000000
+"DefaultByAlphaTest"=dword:00000000
+;
+;在窗口下显示阴影
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DropShadow]
+"DefaultValue"=dword:00000000
+"DefaultByAlphaTest"=dword:00000000
+;
+;在鼠标指针下显示阴影
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\CursorShadow]
+"DefaultValue"=dword:00000000
+;
+;在最大化和最小化时显示动态窗口
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\AnimateMinMax]
+"DefaultValue"=dword:00000000
+;
+;拖动时显示窗口内容
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DragFullWindows]
+"DefaultValue"=dword:00000000
+
+;优化NTFS磁盘性能
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"NtfsDisableLastAccessUpdate"=dword:00000001
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem Management]
+"NtfsDisableLastAccessUpdate"=dword:00000001
+"NtfsDisable8dot3NameCreation"=dword:00000001
+;
+;关闭程序兼容性助理
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat]
+"DisablePCA"=dword:00000001
+;
+;关闭驱动程序验证
+[HKEY_CURRENT_USER\Software\Microsoft\Driver Signing]
+"Policy"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Driver Signing]
+"Policy"=hex:01
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows NT\Driver Signing]
+"BehaviorOnFailedVerify"=dword:00000001
+
+;设置时间不同步
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\W32Time\Parameters]
+"Type"="NoSync"
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\services\W32Time]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\W32Time\Parameters]
+"Type"="NoSync"
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\W32Time]
+"Start"=dword:00000004
+ 
+;去掉某些SATA硬盘任务栏图标
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvata]
+"DisableRemovable"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;加速Aero Snap显示速度，更快看到窗口缩略图
+"ExtendedUIHoverTime"=dword:00000000
+;加速Aero Peek透视桌面功能的显示速度
+"DesktopLivePreviewHoverTime"=dword:00000000
+;
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;加速Aero Snap显示速度，更快看到窗口缩略图
+"ExtendedUIHoverTime"=dword:00000000
+;加速Aero Peek透视桌面功能的显示速度
+"DesktopLivePreviewHoverTime"=dword:00000000
+;
+;自动优化启动分区，加快启动速度
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Dfrg\BootOptimizeFunction]
+"Enable"="Y"
+;
+;自动优化硬盘数据储存，加快软件打开速度
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OptimalLayout]
+"EnableAutoLayout"=dword:00000001
+;
+;关闭系统自动调试功能提高系统运行速度
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AeDebug]
+"Auto"="0"
+;
+;优化磁盘访问性能，提高磁盘数据读写能力
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoLowDiskSpaceChecks"=dword:00000001
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager]
+"AutoChkTimeOut"=dword:00000005
+;
+;加大系统图标缓冲，提高系统开机速度
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
+"Max Cached Icons"="2000"
+
+;关闭远程协助
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Remote Assistance] 
+"fAllowToGetHelp"=dword:00000000 
+
+;关闭休眠
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power] 
+;"HibernateEnabled"=dword:00000001 
+"HibernateEnabled"=dword:00000000 
+
+;取消系统保留带宽
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Psched] 
+"NonBestEffortLimit"=dword:00000000 
+
+;开启离开模式
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power] 
+"AwayModeEnabled"=dword:00000001 
+
+;开启资源管理区自动刷新
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Update] 
+;"UpdateMode"=dword:00000000 
+"UpdateMode"=dword:00000001 
+
+;开启桌面和资源管理器不同进程
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer] 
+"DesktopProcess"=dword:00000001
+
+;快捷方式不加快捷方式后缀
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer] 
+;"link"=hex:1e,00,00,00 
+"link"=hex:00,00,00,00 
+
+;禁止系统在蓝屏时重启
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl]
+"AutoReboot"=dword:00000000
+
+;加快关机速度
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
+"WaitToKillServiceTimeout"="2000"
+
+;设置“系统失败”选项
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl]
+"LogEvent"=dword:00000000           ;不将事件写入系统日志
+"SendAlert"=dword:00000000          ;不发送管理警报
+"AutoReboot"=dword:00000000         ;不自动重启动
+"CrashDumpEnabled"=dword:00000000   ;不写入调试信息
+
+;任务栏右下角日期 - 详细显示  年、月、日、星期
+[HKEY_CURRENT_USER\Control Panel\International]
+"sLongDate"="yyyy'年'M'月'd'日'dddd"
+"sTimeFormat"="HH:mm:ss"
+
+;总是从内存中卸载无用的动态链接
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer]
+"AlwaysUnloadDll"=dword:00000001
+
+;加快结束出错程序等待时间,改太小容易引起WIN7右下角网络图标不见
+;或有红XX但又可以上网，再或有图标但有小圆圈
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"HungAppTimeout"="2000"
+
+;加快关闭服务等待时间
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
+"WaitToKillServiceTimeout"=dword:00002000
+
+;禁止启动时更新组策略以加快启动，让组策略在启动后进行更新
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"SynchronousMachineGroupPolicy"=dword:00000000
+"SynchronousUserGroupPolicy"=dword:00000000
+
+;禁止登录后创建成功登录报告功能
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"ReportBootOk"="0"
+
+;禁止远程修改注册表
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg]
+"RemoteRegAccess"=dword:00000001
+
+;加强隐私设置
+;将视频缩放为窗口大小
+;接受隐私声明
+;禁止启动显示 “媒体指南”
+;禁止自动下载编解码器
+;无可视化效果
+;优化全屏模式下的事件行为
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"SendUserGUID"=hex:00
+"UpgradeCodecPrompt"=dword:00000001
+"SilentAcquisition"=dword:00000001
+"UsageTracking"=dword:00000001
+"UpgradeCheckFrequency"=dword:00000002
+"ForceOnline"=dword:00000000
+"StretchToFit"=dword:00000001
+"SnapToVideo"=dword:00000000
+"UpgradeCodecPrompt"=dword:00000000
+"ShowEffects"=dword:00000000
+"ShowControlsOnEveryMouseMove"=dword:00000000
+"FSControls_ControlsTimeout"=dword:00000001
+"FSControls_CursorTimeout"=dword:00000001
+"FSControls_MoveSpeed"=hex:00,00,c8,42
+"ClipFullScreen"=dword:00000001
+"FirstRun"=dword:00000000
+"LaunchIndex"=dword:00000001
+"DisableMRU"=dword:00000001
+"StartInMediaGuide"=dword:00000000
+"AcceptedPrivacyStatement"=dword:00000001
+
+;设置自动检测硬盘的等待时间(3秒) - 不正常关机或硬盘有问题时，倒数 3 秒后自检
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager]
+"AutoChkTimeOut"=dword:00000003
+;
+;优化 NTFS 性能，禁用更新最近访问日期标记
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"NtfsDisableLastAccessUpdate"=dword:00000001
+;
+;加快程序运行速度
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"ConfigFileAllocSize"=dword:000001f4
+;
+;不允许 Windows 在空闲时自动整理磁盘碎片(dword:00000001 为允许)
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OptimalLayout]
+"EnableAutoLayout"=dword:00000000
+
+;打开启动优化功能
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Dfrg\BootOptimizeFunction]
+"Enable"="Y"
+;
+;开启硬件优化
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Vxd\BIOS]
+"CPUPriority"=dword:00000001
+"PCIConcur"=dword:00000001
+"FastDRAM"=dword:00000001
+"AGPConcur"=dword:00000001
+
+;在 DOS 中支持长文件名 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor] 
+"CompletionChar"=dword:00000009
+
+;关闭硬盘各分区的默认共享
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\lanmanserver\parameters]
+;"AutoShareServer"=dword:00000000
+"AutoShareWks"=dword:00000000
+
+;关闭 IPC$ 默认共享 (禁止匿名用户连接)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa] 
+"restrictanonymous"=dword:00000001
+
+;不允许 SAM 帐户的匿名枚举
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa] 
+"restrictanonymoussam"=dword:00000001
+
+;DOS中支持长文件名
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor] 
+"CompletionChar"=dword:00000009
+;
+;CMD下按Tab键自动完成功能
+[HKEY_CURRENT_USER\Software\Microsoft\Command Processor] 
+"CompletionChar"=dword:9
+;
+;当资源管理器崩溃时则自动重启资源管理器
+[HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"AutoRestartShell"=dword:00000001
+;
+;自动关闭停止响应的程序
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"AutoEndTasks"="1"
+;
+;提高前台程序的显示速度
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"ForegroundLockTimeout"=dword:00000000
+
+;开启自动刷新，防止假死
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"AutoRestartShell"=dword:00000001
+;
+;拖动窗口时不再显示窗口内容，避免在拖动窗口时留下残影卡住界面
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"DragFullWindows"="0"
+
+;性能选项->“让 Windows 选择计算机的最佳设置”
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
+"VisualFXSetting"=dword:00000000
+
+
+;关闭盖子无操作
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Power\PowerSettings\5CA83367-6E45-459F-A27B-476B1D01C936]
+"ACSettingIndex"=dword:00000000
+"DCSettingIndex"=dword:00000000
+
+;电源键关机
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Power\PowerSettings\7648EFA3-DD9C-4E3E-B566-50F929386280]
+"ACSettingIndex"=dword:00000003
+"DCSettingIndex"=dword:00000003
+
+;不睡眠
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Power\PowerSettings\7bc4a2f9-d8fc-4469-b07b-33eb785aaca0]
+"ACSettingIndex"=dword:00000000
+"DCSettingIndex"=dword:00000000
+
+;睡眠按钮无操作
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Power\PowerSettings\96996BC0-AD50-47EC-923B-6F41874DD9EB]
+"ACSettingIndex"=dword:00000000
+"DCSettingIndex"=dword:00000000
+
+;取消右键自定义文件夹
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoCustomizeWebView"=dword:00000001
+
+;------------------------------删除--------------------------------
+;删除 6 个文件夹
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{1CF1260C-4DD0-4ebb-811F-33C572699FDE}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{374DE290-123F-4565-9164-39C4925E467B}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{3ADD1653-EB32-4cb0-BBD7-DFA0ABB5ACCA}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{A0953C92-50DC-43bf-BE83-3742FED03C9C}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{A8CDFF1C-4878-43be-B5FD-F8091C1C60D0}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{1CF1260C-4DD0-4ebb-811F-33C572699FDE}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{374DE290-123F-4565-9164-39C4925E467B}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{3ADD1653-EB32-4cb0-BBD7-DFA0ABB5ACCA}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{A0953C92-50DC-43bf-BE83-3742FED03C9C}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{A8CDFF1C-4878-43be-B5FD-F8091C1C60D0}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}]
+
+;禁用 Windows 自带的 Zip 功能
+[-HKEY_CLASSES_ROOT\.zip\CompressedFolder]
+[-HKEY_CLASSES_ROOT\CLSID\{E88DCCE0-B7B3-11d1-A9F0-00AA0060FA31}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CompressedFolder]
+
+;删除右键新建菜单的ZIP压缩文件
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.zip\ShellNew]
+
+;禁用视频预览
+[-HKEY_CLASSES_ROOT\.avi\ShellEx] 
+[-HKEY_CLASSES_ROOT\.asf\ShellEx] 
+[-HKEY_CLASSES_ROOT\.mpeg\ShellEx] 
+[-HKEY_CLASSES_ROOT\.mpg\ShellEx] 
+[-HKEY_CLASSES_ROOT\.wmv\ShellEx]
+
+;软媒
+[-HKEY_CURRENT_USER\Software\RuanMei]
+
+;万能驱动
+[-HKEY_LOCAL_MACHINE\SOFTWARE\WanDrv]
+
+;自启
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
+"BCSSync"=-
+"RtHDVCpl"=-
+"SynTPEnh"=-
+"SynLenovoGestureMgr"=-
+"Persistence"=-
+
+;自启
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Run]
+"USB3MON"=-
+"332BigDog"=-
+"IAStorIcon"=-
+"Dolby Home Theater v4"=-
+"MuteSync"=-
+

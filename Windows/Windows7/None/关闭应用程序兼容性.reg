@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+;关闭应用程序兼容性引擎
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat] 
+"DisableEngine"=dword:00000001 
+
+;关闭应用程序兼容性助理
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat] 
+"DisablePCA"=dword:00000001 

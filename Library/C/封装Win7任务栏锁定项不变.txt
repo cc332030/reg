@@ -1,0 +1,18 @@
+Win7封装任务栏锁定项不变
+
+定位至HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\Sysprep\Cleanup
+对其右键设定Adminstrators完全控制权限
+删除右边数据为C:\Windows\System32\shsetup.dll,Sysprep_Cleanup_Shell的键值
+
+F5刷新后再执行ES。
+
+
+运行regsvr32 itss.dll
+
+
+
+
+
+
+
+

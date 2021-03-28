@@ -1,0 +1,87 @@
+Windows Registry Editor Version 5.00
+
+#服务优化
+Windows Update 自动更新服务
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\wuauserv]
+"Start"=dword:00000004
+
+Offline Files 脱机服务
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\CscService]
+"Start"=dword:00000004
+
+Remote Registry 远程修改计算机
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\RemoteRegistry]
+"Start"=dword:00000004
+
+Windows Firewall Windows 防火墙
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\MpsSvc]
+"Start"=dword:00000003
+
+Windows Search 索引服务
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\WSearch]
+"Start"=dword:00000004
+
+Windows Error Reporting Service 关闭微软错误报告 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\WerSvc]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\CertPropSvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\MSiSCSI]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\SNMPTRAP]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\napagent]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Netlogon]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\PeerDistSvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\iphlpsvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\TrkWks]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\clr_optimization_v2.0.50727_32]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\clr_optimization_v2.0.50727_64]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\clr_optimization_v4.0.30319_32]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\clr_optimization_v4.0.30319_64]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NetTcpPortSharing]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\idsvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\MMCSS]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\RemoteAccess]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\SCPolicySv]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\SDRSVC]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\seclogon]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\SharedAccess]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\ShellHWDetection]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\TrkWks]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\VSS]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\W32Time]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\WebClient]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\WMPNetworkSvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NetTcpActivator]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NetPipeActivator]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NetMsmqActivator]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\aspnet_state]
+"Start"=dword:00000004

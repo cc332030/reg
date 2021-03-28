@@ -1,0 +1,18 @@
+Windows Registry Editor Version 5.00
+
+#右下角显示星期几
+[HKEY_CURRENT_USER\Control Panel\International]
+"sLongDate"="yyyy'年'M'月'd'日' dddd"
+"sShortDate"="yyyy'年'M'月'd'日',dddd"
+"s1159"="早上"
+"s2359"="下午"
+"sShortTime"="tt h:mm"
+"sTimeFormat"="tt h:mm:ss"
+
+[HKEY_USERS\.DEFAULT\Control Panel\International]
+"sLongDate"="yyyy'年'M'月'd'日' dddd"
+"sShortDate"="yyyy'年'M'月'd'日',dddd"
+"s1159"="早上"
+"s2359"="下午"
+"sShortTime"="tt h:mm"
+"sTimeFormat"="tt h:mm:ss"

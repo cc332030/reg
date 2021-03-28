@@ -1,0 +1,6 @@
+Windows Registry Editor Version 5.00
+
+#ÆÁ±Î±¾µØGUEST
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList]
+"Guest"=dword:00000000
+"Administrator"=dword:00000001

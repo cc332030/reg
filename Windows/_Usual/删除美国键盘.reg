@@ -1,0 +1,4 @@
+Windows Registry Editor Version 5.00
+
+; 删除美国键盘
+[-HKEY_CURRENT_USER\Control Panel\International\User Profile\en-US]

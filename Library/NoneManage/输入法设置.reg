@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+#输入法图标放到任务栏上
+[HKEY_CURRENT_USER\Software\Microsoft\CTF\LangBar]
+"ShowStatus"=dword:00000004
+"Transparency"=dword:000000ff
+"Label"=dword:00000000
+"ExtraIconsOnMinimized"=dword:00000000
+
+#取消语言栏上的帮助按钮
+[HKEY_CURRENT_USER\Software\Microsoft\CTF\LangBar\ItemState\{ED9D5450-EBE6-4255-8289-F8A31E687228}]
+"DemoteLevel"=dword:00000003

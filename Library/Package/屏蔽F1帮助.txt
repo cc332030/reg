@@ -1,0 +1,5 @@
+三种方法：
+
+改文件名法，将%WINDIR%目录下的HelpPane.exe和winhlp32.exe改名
+组策略禁用法，ctrl+r后输入gpedit.msc，计算机配置->windows设置->安全设置->软件限制策略->其他规则。新建一个路径规则，分别添加方法1中的两个文件的路径
+改注册表法，定位到HKEY_CLASSES_ROOT\CLSID\{8cec58ae-07a1-11d9-b15e-000d56bfe6ee}\LocalServer32，右边的默认值，将%SystemRoot%\helppane.exe更改为一个不存在的路径。再定位到HKEY_CLASSES_ROOT\Wow6432Node\TypeLib\{8cec5860-07a1-11d9-b15e-000d56bfe6ee}\1.0\0\win32A (64位系统)或者HKEY_CLASSES_ROOT\TypeLib\{8cec5860-07a1-11d9-b15e-000d56bfe6ee}\1.0\0\win32A (32位系统)，同样将右边默认值改成不存在的路径

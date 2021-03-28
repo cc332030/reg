@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+#最后一次正确设置，1开启0禁止
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"ReportBootOk"="1"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"ReportBootOk"="1"

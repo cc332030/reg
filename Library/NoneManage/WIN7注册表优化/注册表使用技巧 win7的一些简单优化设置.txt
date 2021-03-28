@@ -1,0 +1,377 @@
+注册表就可以完成,何必安装优化软件,说来说去都是在修改注册表
+1.关闭 UAC 功能
+echo. Disable User Account Control (Disable UAC)
+::-------- 权限 ------------::
+call RegPerm "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"
+call RegPerm "HKLM\SYSTEM\CurrentControlSet\Services\luafv"
+::--------------------------::
+set "jkhe=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"
+echo y| reg add "%jkhe%" /v EnableLUA /t REG_DWORD /d 0 /f
+echo. turn off UAC prompt
+set "jkhe=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"
+echo y| reg add "%jkhe%" /v ConsentPromptBehaviorAdmin /t REG_DWORD /d 2 /f
+set "jkhe=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"
+echo y| reg add "%jkhe%" /v ConsentPromptBehaviorUser /t REG_DWORD /d 1 /f
+echo. 不启动 Luafv.sys
+set "jkhe=HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\luafv"
+echo y| reg add "%jkhe%" /v Start /t REG_DWORD /d 4 /f
+echo. 关闭UAC通知
+set "jkhe=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Security Center"
+echo y| reg add "%jkhe%" /v UacDisableNotify /t REG_DWORD /d 1 /f
+2.Windows Defender
+echo. Disable Windows Defender
+::-------- 权限 ------------::
+call RegPerm "HKLM\SOFTWARE\Microsoft\Windows Defender"
+::--------------------------::
+::其它关闭方法 控制面板--启动 Windows Defender 之后 tools(工具),Options 
+::set "jkhe=HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender"
+::echo y| reg add "%jkhe%" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
+set "jkhe=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender"
+echo y| reg add "%jkhe%" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
+echo. 关闭 'Windows Defender'启动
+echo y|reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "Windows Defender"
+3.关闭系统保护(System Protection),系统还原
+::for Windows 7 - RPSessionInterval: 0 = disabled, 1 = enabled
+echo y| reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore" /v RPSessionInterval /t REG_DWORD /d 0 /f
+4.桌面上创建我的文档快捷方式
+@echo off
+echo on error resume next>%systemdrive%\tmpShortcut.vbs
+echo set ws = createobject("wscript.shell")>>%systemdrive%\tmpShortcut.vbs
+echo strDesktop = ws.SpecialFolders("Desktop")>>%systemdrive%\tmpShortcut.vbs
+echo set wind = ws.createshortcut(strDesktop ^& "\我的文档.lnk")>>%systemdrive%\tmpShortcut.vbs
+echo wind.targetpath = "%USERPROFILE%\Documents">>%systemdrive%\tmpShortcut.vbs    
+echo wind.workingdirectory = "%USERPROFILE%\Documents">>%systemdrive%\tmpShortcut.vbs  
+echo wind.save>>%systemdrive%\tmpShortcut.vbs
+CScript.exe %systemdrive%\tmpShortcut.vbs
+5.更改win7文件夹图标
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\explorer\Shell Icons]
+"3"="c:\\更改win7文件夹图标\\gg.ico"
+"4"="c:\\更改win7文件夹图标\\gg.ico"
+;默认此项不存在
+6. echo 操作中心 (Disable Action Center) 
+::消息通知图标(小白旗图标)
+set "jkhe=HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer"
+echo y| reg add "%jkhe%" /v HideSCAHealth /t REG_DWORD /d 1 /f
+7.关闭系统保护(System Protection),系统还原
+::for Windows 7 - RPSessionInterval: 0 = disabled, 1 = enabled
+echo y| reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore" /v RPSessionInterval /t REG_DWORD /d 0 /f
+8.输入法图标放到任务栏上
+[HKEY_CURRENT_USER\Software\Microsoft\CTF\LangBar]
+"ShowStatus"=dword:00000004
+"Transparency"=dword:000000ff
+"Label"=dword:00000000
+"ExtraIconsOnMinimized"=dword:00000000
+9. 关闭智能菜单(比如说隐藏不常用的菜单选项,隐藏不活动图标)
+Windows Registry Editor Version 5.00
+[HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"IntelliMenus"="No"
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"IntelliMenus"="No"
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"EnableAutoTray"=dword:00000000
+;任务栏和开始菜单中的“隐藏不活动图标”
+10. 关闭所有快捷键(粘滞键，筛选键，切换键)
+Windows Registry Editor Version 5.00
+;For the Current User (Usually Me)
+;Disable Sticky Keys
+[HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys]
+"Flags"="506"
+;Disable Filter Keys
+[HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response]
+"Flags"="122"
+;Disable Toggle Keys
+[HKEY_CURRENT_USER\Control Panel\Accessibility\ToggleKeys]
+"Flags"="58"
+;For when noone is logged in
+;Disable Sticky Keys
+[HKEY_USERS\.DEFAULT\Control Panel\Accessibility\StickyKeys]
+"Flags"="506"
+;Disable Filter Keys
+[HKEY_USERS\.DEFAULT\Control Panel\Accessibility\Keyboard Response]
+"Flags"="122"
+;Disable Toggle Keys
+[HKEY_USERS\.DEFAULT\Control Panel\Accessibility\ToggleKeys]
+"Flags"="58"
+11.在右键菜单中加入“记事本”打开项
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\*\shell\用记事本打开\command]
+@="notepad.exe \"%1\""
+12. 快捷方式上不出现快捷方式这四个字
+Windows Registry Editor Version 5.00
+[HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"Link"=hex:00,00,00,00
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
+"Link"=hex:00,00,00,00
+13. 鼠标的右键菜单加上复制到和移动到
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AllFilesystemObjects\shellex\ContextMenuHandlers\Copy To]
+@="{C2FBB630-2971-11D1-A18C-00C04FD75D13}
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AllFilesystemObjects\shellex\ContextMenuHandlers\Move To]
+@="{C2FBB631-2971-11D1-A18C-00C04FD75D13}"
+14.突出显示新安装的程序(开始菜单)
+Windows Registry Editor Version 5.00
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_NotifyNewApps"=dword:00000000
+;win7突出显示新安装的程序(开始菜单)
+;0不突出显示,1为突出显示
+15. 禁止历史记录
+Windows Registry Editor Version 5.00
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoRecentDocsHistory"=dword:00000001
+;禁止向"最近使用的项目"添加历史记录(自策略方法)
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;"Start_ShowRecentDocs"=dword:00000000
+;"Start_TrackDocs"=dword:00000000
+;"Start_MinMFU"=dword:00000000
+;"Start_TrackProgs"=dword:00000000
+;---------------------------------------------
+;Start_TrackDocs 禁止"最近使用的项目"中的历史记录
+;Start_TrackProgs 存储并显示最近在"开始"菜单中打开的程序(0为禁用)
+;Start_ShowRecentDocs 显示我最近使用的项目图标
+;Start_MinMFU 项目数,是这个设置太大的话,会使开始菜单高度太高,所以小点或保留默认值
+;---------------------------------------------
+16.防止将窗口移动到屏幕边缘时自动排列窗口(自动最大化),Smart Window Arrangement (win7)
+Windows Registry Editor Version 5.00
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"WindowArrangementActive"="0"
+;防止将窗口移动到屏幕边缘时自动排列窗口(自动最大化)
+17. win7关闭程序兼容性助手 Turn off Program Compatibility Assist
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat]
+"DisablePCA"=dword:00000001
+;win7关闭程序兼容性助手 Turn off Program Compatibility Assist
+18. IE关闭安全设置检查功能
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Security])
+"DisableSecuritySettingsCheck"=dword:00000001
+;当前安全设置会使计算机有风险。请单击这里更改安全设置
+;DisableSecuritySettingsCheck关闭安全设置检查功能
+19. win7搜索的历史记录DisableSearchBoxSuggestions
+Windows Registry Editor Version 5.00
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer]
+"DisableSearchBoxSuggestions"=dword:00000001
+20. IE安全警报的几个弹窗,弹窗阻止程序
+Windows Registry Editor Version 5.00
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\New Windows]
+"PopupMgr"=dword:00000000
+;关闭弹窗阻止(0关闭,1为启用)
+;1809 禁止使用弹出窗口阻止程序turn off IE popup blocker(在安全级别中)
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"WarnonBadCertRecving"=dword:00000000 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings]
+"WarnonBadCertRecving"=dword:00000000 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\WinTrust\Trust Providers\Software Publishing]
+"State"=dword:00023e00 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WinTrust\Trust Providers\Software Publishing]
+"State"=dword:00023e00
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Download]
+;检查下载的程序的签名
+"CheckExeSignatures"="no" 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+;该站点安全证书的吊销信息不可用.是否继续
+;取消SSL证书的https链接的安全警报
+;对无效站点证书发出警告；在安全和非安全模式之间转换时发出警告；重定向提交表单发出警告
+"WarnonBadCertRecving"=dword:00000000
+"WarnonZoneCrossing"=dword:00000000
+"WarnOnPostRedirect"=dword:00000000 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer\Download]
+;检查下载的程序的签名
+"CheckExeSignatures"="no" 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings] 
+;该站点安全证书的吊销信息不可用.是否继续
+;取消SSL证书的https链接的安全警报 
+;对无效站点证书发出警告；在安全和非安全模式之间转换时发出警告；重定向提交表单发出警告
+ "WarnonBadCertRecving"=dword:00000000
+"WarnonZoneCrossing"=dword:00000000
+"WarnOnPostRedirect"=dword:00000000
+;使用SSL2.0和3.0和TLS1.0＝a8全部启用r
+"SecureProtocols"=dword:000000a8
+"CertificateRevocation"=dword:00000000
+;CertificateRevocation安全警报 -- 该站点安全证书的吊销信息不可用.是否继续
+;****************************************************************************
+;"WarnonBadCertRecving"=dword:00000000 
+;"State"=dword:00023e00 
+;安全警报 
+;您与该站点交换的信息不会被其他人查看或更改，但该站点的安全证书有问题 
+;该安全证书由可信度验证机构发行 
+;该安全证书以到期货还未生效 
+;该安全证书有一个与您试图查看的网页名称匹配的有效名称
+;是否继续？
+;- Internet属性设置框
+;- 高级
+;- 安全
+;- 对无效站点证书发出警告
+;- 检查发行商的证书吊销   
+;对无效站点证书发出警告(对证书地址不匹配发出警告)
+;检查发行商证书是否吊销＝23e00否； 
+21. IE 安全级别设置
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3]
+"CurrentLevel"=dword:00011000
+;"MinLevel"=dword:00010000
+"RecommendedLevel"=dword:000110009
+"1207"=dword:00000000
+"1208"=dword:00000000
+"120B"=dword:00000000
+"1408"=dword:00000000
+"160A"=dword:00000000
+"2005"=dword:00000000
+"2103"=dword:00000000
+"2104"=dword:00000000
+"2105"=dword:00000000
+"1E05"=dword:00030000
+"2301"=dword:00000003
+"1809"=dword:00000003
+"1201"=dword:00000000
+"2500"=dword:00000003
+"1609"=dword:00000000
+"1806"=dword:00000000
+"180D"=dword:00000000
+"1004"=dword:00000001
+
+;Internet Settings\Zones\0 本地计算机配置
+;Internet Settings\Zones\3 Internet配置
+;(Internet选项--安全--自定义级别)
+;CurrentLevel: 当前使用的
+;MinLevel: 最小
+;RecommendedLevel：推荐
+;相关键值为：
+$00012000：高，$00011500：中-高 ，$00011000：中，$00010500：中低，$00010000：低
+;（3＝禁用、0＝启用、1=提示）
+;1809 禁止使用弹出窗口阻止程序
+;2301 禁用 SmartScreen过滤器(IE8以上,IE7为‘仿冒网站筛选’)1
+;1201 启用对没有标记为安全的ActiveX 控件进行初始化和脚本运行(防止 IE的 Script Error, 即 脚本错误)
+;1201 提示框:在此页上的ActiveX 控件和本页上的其他不分的交互可能不安全.你想允许这种交互吗
+;1201 对没有标记为安全的 ActiveX 控件进行初始化和脚本运行(解决SCRIPT ERROR 错误)
+;2500  IE -- 安全 -- 启用保护模式(turn on protected mode) (7.0以上) Turn on Protected Mode [Vista only setting]
+;1E05 （30000＝安全度 - 低、10000＝安全度 - 高、20000＝安全度－中）软件频道权限
+;120B Only allow approved domains to use ActiveX controls without prompt 
+;120B 只允许被被认可的域名自动安装 ActiveX 控件!
+;1609 网页弹出的安全信息提示(显示混合内容)
+;1609 显示混合内容 display mixed content,是否只查看安全传送的网页内容
+;1806 加载应用程序和不安全文件( 默认是： 1＝提示,在3中是提示)
+;1806 “打开文件 安全警告” 对话框 (无法验证发行者，你确定要运行此软件吗)
+;180D (保留，未知)
+;1004 下载未签名的ActiveX控件
+;以上为IE8的默认设置“中-高”更改为“中”
+
+22. 关闭键盘上的电源键;睡眠键;关闭显示器;关闭硬盘
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Power\PowerSettings\7648EFA3-DD9C-4E3E-B566-50F929386280]
+"ACSettingIndex"=dword:00000000
+;Select the Power Button Action 电源按钮的动作(Plugged In,电源供电)
+;dword:00000000 -> take no action
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Power\PowerSettings\96996BC0-AD50-47EC-923B-6F41874DD9EB]
+"ACSettingIndex"=dword:000000002 |
+;Select the Sleep Button Action 睡眠按钮的动作(Plugged In,电源供电)
+;dword:00000000 -> take no action
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Power\PowerSettings\7648EFA3-DD9C-4E3E-B566-50F929386280]
+"DCSettingIndex"=dword:00000000
+;Select the Power Button Action 电源按钮的动作(On Battery,电池供电,比如笔记本电脑)
+;dword:00000000 -> take no action
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Power\PowerSettings\96996BC0-AD50-47EC-923B-6F41874DD9EB]
+"DCSettingIndex"=dword:00000000
+;Select the Sleep Button Action 睡眠按钮的动作(On Battery,电池供电,比如笔记本电脑)
+;dword:00000000 -> take no action
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Power\PowerSettings\3C0BC021-C8A8-4E07-A973-6B14CBCB2B7E]
+"DCSettingIndex"=dword:00000000
+;Turn Off the Display 关闭显示器(On Battery,电池供电)
+;dword:00000000 -> take no action
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Power\PowerSettings\3C0BC021-C8A8-4E07-A973-6B14CBCB2B7E]
+"ACSettingIndex"=dword:00000000
+;Turn Off the Display 关闭显示器(Plugged In,电源供电)
+;dword:00000000 -> take no action
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Power\PowerSettings\6738E2C4-E8A5-4A42-B16A-E040E769756E]
+"DCSettingIndex"=dword:00000000
+;Turn Off the Hard Disk 关闭硬盘(On Battery,电池)
+;dword:00000000 -> take no action
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Power\PowerSettings\6738E2C4-E8A5-4A42-B16A-E040E769756E]
+"ACSettingIndex"=dword:00000000
+;Turn Off the Hard Disk 关闭硬盘(Plugged In,电源)
+;dword:00000000 -> take no action
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Power\PowerSettings\94ac6d29-73ce-41a6-809f-6363ba21b47e]
+"DCSettingIndex"=dword:00000000
+;Turn Off Hybrid Sleep 禁止进入混合睡眠状态(On Battery,电池)
+;dword:00000000 -> take no action
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Power\PowerSettings\94ac6d29-73ce-41a6-809f-6363ba21b47e]
+"ACSettingIndex"=dword:00000000
+;Turn Off Hybrid Sleep 禁止进入混合睡眠状态(Plugged In,电源)
+;dword:00000000 -> take no action
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Power\PowerSettings\9D7815A6-7EE4-497E-8888-515A05F02364]
+"DCSettingIndex"=dword:00000000
+;Specify the System Hibernate Timeout 休眠超时;禁止进入休眠状态(On Battery,电池) 
+;dword:00000000 -> take no action
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Power\PowerSettings\9D7815A6-7EE4-497E-8888-515A05F02364]
+"ACSettingIndex"=dword:00000000 
+;Specify the System Hibernate Timeout 休眠超时;禁止进入休眠状态(Plugged In,电源)
+; dword:00000000 -> take no action
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Power\PowerSettings\29F6C1DB-86DA-48C5-9FDB-F2B67B1F44DA])
+"DCSettingIndex"=dword:00000000
+;Specify the System Sleep Timeout 睡眠超时;禁止进入睡眠状态(On Battery,电池)
+;dword:00000000 -> take no action
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Power\PowerSettings\29F6C1DB-86DA-48C5-9FDB-F2B67B1F44DA]
+"ACSettingIndex"=dword:00000000
+;Specify the System Sleep Timeout 睡眠超时;禁止进入睡眠状态(Plugged In,电源)
+;dword:00000000 -> take no action
+23. 文件夹窗口的设置( Navigation pane 右边的导航窗格,工具条添加复制粘贴删除按钮)
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\CLSID\{323CA680-C24D-4099-B94D-446DD2D7249E}\ShellFolder]
+"Attributes"=dword:a9400100
+;隐藏“收藏夹”项目(文件夹窗口--资源管理器窗口)
+;将Attributes的键值由 a0900100 修改为 a9400100
+[HKEY_CLASSES_ROOT\CLSID\{B4FB3F98-C1EA-428d-A78A-D1F5659CBA93}\ShellFolder]
+"Attributes"=dword:b094010c
+;隐藏“家庭组“项目
+;将Attributes的键值由 b084010c 修改为 b094010c
+[HKEY_CLASSES_ROOT\CLSID\{031E4825-7B94-4dc3-B131-E946B44C8DD5}\ShellFolder]
+"Attributes"=dword:b090010d
+;隐藏“库”项目
+;将Attributes的键值由 b080010d 修改为 b090010d
+[HKEY_CLASSES_ROOT\CLSID\{26EE0668-A00A-44D7-9371-BEB064C98683}\ShellFolder]
+"Attributes"=dword:a0900004
+;隐藏“控制面板”项目
+;将Attributes的键值由a0000004 修改为 a0900004
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer])
+"AlwaysShowClassicMenu"=dword:00000001
+;Display the menu bar in Windows Explorer(win7)
+;win7资源管理器中显示菜单栏
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"NavPaneShowAllFolders"=dword:00000001
+;win7 显示所有文件夹(文件夹窗口左侧 侧边栏 目录树)
+[HKEY_CLASSES_ROOT\CLSID\{59031a47-3f72-44a7-89c5-5595fe6b30ee}\ShellFolder]
+"Attributes"=dword:f094012d
+;隐藏用户文件夹比如administrator文件夹(包括桌面上也会一起去掉)
+;将Attributes的键值由 f084012d 修改为 f094012d
+[HKEY_CLASSES_ROOT\CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}\ShellFolder]
+"Attributes"=dword:b0940064
+;隐藏“网络”项目
+;将Attributes的键值由 b0040064 修改为 b0940064
+[HKEY_CLASSES_ROOT\CLSID\{031E4825-7B94-4dc3-B131-E946B44C8DD5}\ShellFolder]
+"Attributes"=dword:b090010d
+;隐藏“库”项目!
+;将Attributes的键值由 b080010d 修改为 b090010d
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderTypes\{5c4f28b5-f869-4e84-8e60-f11db97c5cc7}\TasksItemsSelected]
+@="Windows.paste;Windows.CopyTo;Windows.MoveTo;Windows.copy;Windows.cut;Windows.delete;Windows.properties"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderTypes\{5c4f28b5-f869-4e84-8e60-f11db97c5cc7}\TasksNoItemsSelected]
+@="Windows.paste;Windows.CopyTo;Windows.MoveTo;Windows.copy;Windows.cut;Windows.delete;Windows.properties"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Windows.MoveTo]
+"CanonicalName"="{C2FBB631-2971-11D1-A18C-00C04FD75D13}"
+"MUIVerb"="移动到"
+"ShowAsDisabledIfHidden"=""
+"AttributeMask"=dword:00000002
+"AttributeValue"=dword:00000002
+"ImpliedSelectionModel"=dword:000000000
+"InvokeCommandOnSelection"=dword:00000001
+"Icon"="shell32.dll,-16762"
+"Description"="移动到文件夹"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Windows.CopyTo]
+"CanonicalName"="{C2FBB630-2971-11D1-A18C-00C04FD75D13}"
+"Description"="复制到文件夹"
+"Icon"="shell32.dll,-243"
+"MUIVerb"="复制到"
+"ShowAsDisabledIfHidden"=""
+"AttributeMask"=dword:00000001
+"AttributeValue"=dword:00000001
+"ImpliedSelectionModel"=dword:00000000
+"InvokeCommandOnSelection"=dword:000000012

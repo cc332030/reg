@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+#win7关闭程序兼容性助手
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat]
+"DisablePCA"=dword:00000001

@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+#关闭在显示系统文件夹时的警告提示（文件夹选项里的那个）
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Folder\SuperHidden]
+"WarningIfNotDefault"=@shell32.dll,-28964

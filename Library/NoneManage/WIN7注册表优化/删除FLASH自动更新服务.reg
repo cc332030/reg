@@ -1,0 +1,4 @@
+Windows Registry Editor Version 5.00
+
+#删除FLASH自动更新服务
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\AdobeFlashPlayerUpdateSvc]

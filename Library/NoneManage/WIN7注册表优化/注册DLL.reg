@@ -1,0 +1,27 @@
+Windows Registry Editor Version 5.00
+
+#×¢²áDLL
+[HKEY_CLASSES_ROOT\dllfile\shell]
+[HKEY_CLASSES_ROOT\dllfile\shell\RegServer]
+@="×¢²á Dll"
+
+[HKEY_CLASSES_ROOT\dllfile\shell\RegServer\command]
+@="regsvr32.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\dllfile\shell\UnregRegServer]
+@="·´×¢²á Dll"
+
+[HKEY_CLASSES_ROOT\dllfile\shell\UnregRegServer\command]
+@="regsvr32.exe /u \"%1\""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\dllfile\shell\RegServer]
+@="×¢²á Dll"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\dllfile\shell\RegServer\command]
+@="regsvr32.exe \"%1\""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\dllfile\shell\UnregRegServer]
+@="·´×¢²á Dll"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\dllfile\shell\UnregRegServer\command]
+@="regsvr32.exe /u \"%1\""

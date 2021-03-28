@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+#去掉某些SATA硬盘任务栏图标
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvata]
+"DisableRemovable"=dword:00000001

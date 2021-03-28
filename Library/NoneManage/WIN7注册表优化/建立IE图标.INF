@@ -1,0 +1,49 @@
+[Version]
+signature="$Windows NT$"
+DriverVer=10/01/2002,5.2.3790.1830
+
+[DefaultInstall]
+AddReg = DeskIEIcon.AddReg
+
+[DeskIEIcon.AddReg]
+HKCR,"%IECLSID%","InfoTip",0x00000000,"@%11%\ieframe.dll,-881"
+HKCR,"%IECLSID%",,0x00000000,"Internet Explrer"
+
+HKCR,"%IECLSID%\DefaultIcon",,0x00000000,"%11%\ieframe.dll,-190"
+
+HKCR,"%IECLSID%\InProcServer32",,0x00000000,"%11%\ieframe.dll"
+HKCR,"%IECLSID%\InProcServer32","ThreadingModel",0x00000000,"Apartment"
+
+HKCR,"%IECLSID%\shell",,0x00000000,"OpenHomePage"
+
+HKCR,"%IECLSID%\shell\NoAddOns",,0x00000000,"在没有加载项的情况下启动"
+
+HKCR,"%IECLSID%\shell\NoAddOns\Command",,0x00000000,""""%16422%\Internet Explorer\iexplore.exe""" -extoff"
+
+HKCR,"%IECLSID%\shell\OpenHomePage",,0x00000000,"打开主页(&H)"
+
+HKCR,"%IECLSID%\shell\OpenHomePage\Command",,0x00000000,"""%16422%\Internet Explorer\iexplore.exe"""
+
+HKCR,"%IECLSID%\shell\Properties",,0x00000000,"属性(&R)"
+HKCR,"%IECLSID%\shell\Properties","Position",0x00000000,"bottom"
+
+HKCR,"%IECLSID%\shell\Properties\command",,0x00000000,""""%11%\control.exe""" """%11%\inetcpl.cpl""""
+
+HKCR,"%IECLSID%\Shellex\ContextMenuHandlers\ieframe",,0x00000000,"{871C5380-42A0-1069-A2EA-08002B30309D}"
+
+HKCR,"%IECLSID%\Shellex\MayChangeDefaultMenu",,0x00000000
+
+HKCR,"%IECLSID%\ShellFolder",,0x00000000,"%11%\ieframe.dll,-190"
+HKCR,"%IECLSID%\ShellFolder","HideAsDeletePerUser",0x00000000
+HKCR,"%IECLSID%\ShellFolder","HideFolderVerbs",0x00000000
+HKCR,"%IECLSID%\ShellFolder","WantsParseDisplayName",0x00000000
+HKCR,"%IECLSID%\ShellFolder","HideOnDesktopPerUser",0x00000000
+HKCR,"%IECLSID%\ShellFolder","Attributes",0x00010001,0x00000030
+
+HKCU,"Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu","{871C5380-42A0-1069-A2EA-08002B30308D}",0x00010001,0
+HKCU,"Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel","{871C5380-42A0-1069-A2EA-08002B30308D}",0x00010001,0
+
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{871C5380-42A0-1069-A2EA-08002B30308D}",,0x00000000
+
+[Strings]
+IECLSID = "CLSID\{871C5380-42A0-1069-A2EA-08002B30308D}"

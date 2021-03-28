@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+#设置自动检测硬盘的等待时间(3秒) - 不正常关机或硬盘有问题时，倒数 3 秒后自检
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager]
+"AutoChkTimeOut"=dword:00000003

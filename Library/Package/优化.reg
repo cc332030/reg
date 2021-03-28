@@ -1,0 +1,31 @@
+Windows Registry Editor Version 5.00
+
+;4、自动卸载IE中残留的DLL
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
+"AlwaysUnloadDLL"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update]
+"AUOptions"=dword:00000001         ;从不检查更新 
+"ElevateNonAdmins"=dword:00000001  ;允许所有用户在此计算机安装更新
+"IncludeRecommendedUpdates"=dword:00000000  ;关闭推荐更新(多为垃圾补丁推荐关闭)
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"NoAUShutdownOption"=dword:00000001             ;关闭Windows时对话框不显示"安装更新并关机"
+"NoAutoRebootWithLoggedOnUsers"=dword:00000001  ;禁止安装更新后自动重启
+
+;Windows Update 自动更新服务
+;[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\wuauserv]
+;"Start"=dword:00000002
+;"DelayedAutoStart"=dword:00000001
+
+;Security Center 安全中心
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\wscsvc]
+"Start"=dword:00000003
+;"DelayedAutoStart"=dword:00000001
+;
+;Windows Firewall Windows 防火墙
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\MpsSvc]
+"Start"=dword:00000003
+;
+;Windows Error Reporting Service 关闭微软错误报告 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\WerSvc]
+"Start"=dword:00000003

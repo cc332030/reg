@@ -1,0 +1,6 @@
+reg add "HKCU\Software\MicROSoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /f /v "D:\youxi\game.exe" /t REG_SZ /d "WIN98"
+
+for /f "delims=" %%a in ('dir /a-d/s/b *') do (
+reg add "HKCU\Software\MicROSoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /f /v "%%~a" /t REG_SZ /d "WIN98"
+)
+pause

@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+;不显示删除确认提示
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"ShellState"=hex:24,00,00,00,37,a8,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  01,00,00,00,12,00,00,00,00,00,00,00,22,00,00,00
+  
+;"ShellState"=hex:24,00,00,00,33,a8,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+;  01,00,00,00,12,00,00,00,00,00,00,00,22,00,00,00
